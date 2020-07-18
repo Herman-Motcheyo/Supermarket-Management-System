@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1248.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox layoutX="-3.0" prefHeight="0.0" prefWidth="1010.0">
+         <children>
+            <VBox prefHeight="41.0" prefWidth="1005.0" style="-fx-background-color: #097eba;" />
+            <VBox prefHeight="41.0" prefWidth="1005.0" style="-fx-background-color: #097eba;" />
+         </children>
+      </HBox>
+      <HBox layoutX="-2.0" layoutY="-2.0" prefHeight="72.0" prefWidth="1256.0" style="-fx-background-color: #097eba;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="SUPERMARKET MANEGEMENT SYSTEM" textAlignment="JUSTIFY" textOrigin="CENTER" wrappingWidth="724.017578125">
+               <font>
+                  <Font name="Berlin Sans FB" size="35.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <HBox.margin>
+                  <Insets left="150.0" top="15.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <HBox layoutX="-3.0" layoutY="70.0" prefHeight="50.0" prefWidth="1248.0">
+         <children>
+            <JFXButton prefHeight="50.0" prefWidth="194.0" text="Management of stock" />
+            <JFXButton prefHeight="50.0" prefWidth="176.0" text="Management of enter" />
+            <JFXButton prefHeight="54.0" prefWidth="160.0" text="Category of Products" />
+            <JFXButton prefHeight="60.0" prefWidth="115.0" text="Sold" />
+            <JFXButton prefHeight="50.0" prefWidth="161.0" text="Provider of products" />
+            <JFXButton prefHeight="52.0" prefWidth="128.0" text="Facture" />
+            <JFXButton prefHeight="50.0" prefWidth="127.0" text="Commande" />
+            <JFXButton prefHeight="50.0" prefWidth="189.0" text="Reception of Product" />
+         </children>
+      </HBox>
+      <AnchorPane layoutX="2.0" layoutY="131.0" prefHeight="268.0" prefWidth="1248.0">
+         <children>
+            <Label alignment="CENTER" layoutX="8.0" layoutY="15.0" prefHeight="33.0" prefWidth="59.0" text="Code " />
+            <Label alignment="CENTER" layoutX="14.0" layoutY="67.0" prefHeight="41.0" prefWidth="89.0" text="Designation" />
+            <TextField layoutX="111.0" layoutY="12.0" prefHeight="33.0" prefWidth="235.0" />
+            <Label alignment="CENTER" layoutX="12.0" layoutY="122.0" prefHeight="33.0" prefWidth="51.0" text="Unity" />
+            <TextField layoutX="111.0" layoutY="125.0" prefHeight="26.0" prefWidth="103.0" />
+            <Label alignment="CENTER" layoutX="251.0" layoutY="131.0" prefHeight="33.0" prefWidth="51.0" text="Price" />
+            <TextField layoutX="403.0" layoutY="121.0" prefHeight="26.0" prefWidth="142.0" />
+            <Label alignment="CENTER" layoutX="499.0" layoutY="15.0" prefHeight="33.0" prefWidth="115.0" text="Provider" />
+            <ComboBox layoutX="624.0" layoutY="19.0" prefHeight="26.0" prefWidth="193.0" />
+            <Label alignment="CENTER" layoutX="499.0" layoutY="71.0" prefHeight="33.0" prefWidth="115.0" text="Provider" />
+            <ComboBox layoutX="624.0" layoutY="67.0" prefHeight="26.0" prefWidth="193.0" />
+            <Label alignment="CENTER" layoutX="8.0" layoutY="172.0" prefHeight="33.0" prefWidth="89.0" text="Quantity" />
+            <TextField layoutX="111.0" layoutY="175.0" prefHeight="26.0" prefWidth="103.0" />
+            <Label alignment="CENTER" layoutX="251.0" layoutY="172.0" prefHeight="33.0" prefWidth="142.0" text="Minimum Quantity" />
+            <TextField layoutX="403.0" layoutY="175.0" prefHeight="26.0" prefWidth="142.0" />
+            <Label alignment="CENTER" layoutX="19.0" layoutY="226.0" prefHeight="33.0" prefWidth="89.0" text="Storehouse" />
+            <ComboBox layoutX="111.0" layoutY="230.0" prefHeight="26.0" prefWidth="193.0" />
+            <VBox layoutX="952.0" prefHeight="272.0" prefWidth="294.0" style="-fx-border-color: #097eba;">
+               <children>
+                  <HBox prefHeight="46.0" prefWidth="294.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="49.0" prefWidth="294.0" style="-fx-background-color: #097eba;" text="OPERATION ABOUT PRODUCT" />
+                     </children>
+                  </HBox>
+                  <AnchorPane prefHeight="227.0" prefWidth="292.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="14.0" layoutY="25.0" prefHeight="33.0" prefWidth="59.0" text="Code " />
+                        <JFXTextField labelFloat="true" layoutX="67.0" layoutY="10.0" prefHeight="41.0" prefWidth="227.0" promptText="If you want to delete enter the code">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton buttonType="RAISED" layoutX="81.0" layoutY="58.0" prefHeight="41.0" prefWidth="160.0" style="-fx-background-color: #000000#000000;" text="ADD new product" textFill="#fffefe">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="81.0" layoutY="113.0" prefHeight="41.0" prefWidth="160.0" style="-fx-background-color: #000000#000000;" text="Search new product" textFill="#fffefe">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="81.0" layoutY="171.0" prefHeight="41.0" prefWidth="160.0" style="-fx-background-color: #000000#000000;" text="Delete Information" textFill="#fffefe">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <JFXButton buttonType="RAISED" layoutX="633.0" layoutY="127.0" prefHeight="41.0" prefWidth="175.0" style="-fx-background-color: #000000#000000;" text="Save Information" textFill="#fffefe">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <TextArea layoutX="111.0" layoutY="68.0" prefHeight="50.0" prefWidth="235.0" />
+            <Label layoutX="816.0" layoutY="120.0" prefHeight="33.0" prefWidth="45.0" />
+            <ImageView fitHeight="36.0" fitWidth="97.0" layoutX="821.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/image4.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <JFXTreeTableView layoutX="2.0" layoutY="403.0" prefHeight="245.0" prefWidth="1248.0">
+         <columns>
+            <TreeTableColumn prefWidth="113.0" text="Code" />
+            <TreeTableColumn prefWidth="132.0" text="Designation" />
+            <TreeTableColumn prefWidth="141.0" text="category" />
+            <TreeTableColumn prefWidth="112.0" text="Unity" />
+            <TreeTableColumn prefWidth="145.0" text="Quantity" />
+            <TreeTableColumn prefWidth="147.0" text="Minimum Quantity" />
+            <TreeTableColumn prefWidth="143.0" text="Price" />
+            <TreeTableColumn prefWidth="166.0" text="Provider" />
+            <TreeTableColumn prefWidth="148.0" text="Storehouse" />
+         </columns>
+      </JFXTreeTableView>
+   </children>
+</AnchorPane>

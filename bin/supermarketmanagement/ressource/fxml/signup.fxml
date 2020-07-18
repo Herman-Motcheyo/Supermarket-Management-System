@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="supermarketmanagement.java.control.SignupController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <VBox prefHeight="137.0" prefWidth="500.0" style="-fx-background-color: #097eba;">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="SUPERMARKET MANEGEMENT SYSTEM" wrappingWidth="441.017578125">
+                     <font>
+                        <Font name="Berlin Sans FB" size="35.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="29.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Label alignment="CENTER" prefHeight="53.0" prefWidth="110.0" text="SIGN UP" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="200.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="SE_RESIZE" />
+                     </cursor>
+                  </Label>
+               </children>
+            </VBox>
+            <AnchorPane prefHeight="268.0" prefWidth="500.0">
+               <children>
+                  <Label layoutX="24.0" layoutY="99.0" prefHeight="39.0" prefWidth="51.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_user_64px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label layoutX="24.0" layoutY="99.0" prefHeight="39.0" prefWidth="39.0" />
+                  <ImageView fitHeight="46.0" fitWidth="97.0" layoutX="19.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_user_50px.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="19.0" layoutY="169.0" prefHeight="34.0" prefWidth="46.0" />
+                  <JFXTextField fx:id="username" labelFloat="true" layoutX="75.0" layoutY="47.0" prefHeight="34.0" prefWidth="155.0" promptText="Username" />
+                  <JFXTextField fx:id="firstname" labelFloat="true" layoutX="75.0" layoutY="106.0" promptText="Firstname" />
+                  <JFXTextField fx:id="email" labelFloat="true" layoutX="75.0" layoutY="173.0" promptText="email" />
+                  <ImageView fitHeight="34.0" fitWidth="59.0" layoutX="27.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_secured_letter_50px.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="295.0" layoutY="47.0" prefHeight="40.0" prefWidth="39.0" />
+                  <Label layoutX="267.0" layoutY="112.0" prefHeight="40.0" prefWidth="57.0" />
+                  <Label layoutX="278.0" layoutY="167.0" prefHeight="39.0" prefWidth="39.0">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_phone_26px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <ImageView fitHeight="34.0" fitWidth="38.0" layoutX="264.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_user_64px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="29.0" fitWidth="35.0" layoutX="267.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_lock_52px.png" />
+                     </image>
+                  </ImageView>
+                  <JFXTextField fx:id="lastname" labelFloat="true" layoutX="319.0" layoutY="106.0" prefHeight="26.0" prefWidth="163.0" promptText="LastName" />
+                  <JFXTextField fx:id="phone_number" labelFloat="true" layoutX="317.0" layoutY="174.0" prefHeight="26.0" prefWidth="163.0" promptText="Mobile Number" />
+                  <JFXPasswordField fx:id="password" layoutX="316.0" layoutY="51.0" prefHeight="26.0" prefWidth="170.0" promptText="Password" />
+                  <HBox layoutX="109.0" layoutY="206.0" prefHeight="53.0" prefWidth="349.0">
+                     <children>
+                        <JFXButton fx:id="btn_signup" onKeyPressed="#signRegistration" prefHeight="49.0" prefWidth="113.0" style="-fx-background-color: #097eba; -fx-background-radius: 15;" text="Sign up" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="95.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <ImageView fitHeight="65.0" fitWidth="110.0" layoutX="5.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo%20herman.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btn_login" layoutX="370.0" layoutY="267.0" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #097eba; -fx-background-radius: 15;" text="Login" textFill="WHITE" />
+                  <Label layoutX="153.0" layoutY="279.0" prefHeight="26.0" prefWidth="170.0" text="if you have account ?" />
+               </children></AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

@@ -1,15 +1,16 @@
-package supermarketmanagement.java.model;
+package supermarketmanagement.java.model.classe;
 
 public class Person {
 
 	  public Person(String firstname, String username, String lastname, String email, long number_phone) {
-		super();
+		
 		this.firstname = firstname;
 		this.username = username;
 		this.lastname = lastname;
 		this.email = email;
 		this.number_phone = number_phone;
 	}
+	  public Person() {}
 	  
 	  protected String firstname;
 	  protected String username;
@@ -30,7 +31,7 @@ public class Person {
 		this.username = username;
 	}
 	public String getLastname() {
-		return lastname;
+		return 	lastname;
 	}
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
@@ -46,10 +47,6 @@ public class Person {
 	}
 	public void setNumber_phone(long number_phone) {
 		this.number_phone = number_phone;
-	}
-	
-	public  void addPerson(String fname,String lname , String femail , long fnumber ) {
-		
 	}
 	
 

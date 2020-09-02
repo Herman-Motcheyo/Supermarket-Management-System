@@ -1,12 +1,5 @@
 package supermarketmanagement.java.model.classe;
 
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import supermarketmanagement.java.control.AlertBox;
 /*
  * @Author
  *     TCHENEGHON MOTCHEYO HERMAN
@@ -31,12 +24,9 @@ public class Administrator extends Person {
 	public String getPassword() {
 		return this.password;
 	}
-     /*
-      * 
-      * @This method save administrator informations
-      * */
+ 
 	
-    public void saveAdmin() {
+    /** public void saveAdmin() {
 		
 		BufferedWriter file =null;
 		PrintWriter p =null;
@@ -56,7 +46,7 @@ public class Administrator extends Person {
 		AlertBox.display("Writing Error", "Error Writing in file Admin");	
 			e.printStackTrace();
 		}
-	}
+	}*/
     
     
 }

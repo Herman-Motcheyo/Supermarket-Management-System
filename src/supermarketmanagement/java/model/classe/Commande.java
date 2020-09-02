@@ -12,9 +12,10 @@ public Commande(int numCom, Date dateCom, boolean statutCom) {
 		this.dateCom = dateCom;
 		this.statutCom = statutCom;
 	}
-protected int  numCom;
+  protected int  numCom;
   protected Date  dateCom;
   protected boolean   statutCom;
+  
 public int getNumCom() {
 	return numCom;
 }

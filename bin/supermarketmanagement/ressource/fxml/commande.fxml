@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="26.0" layoutY="55.0" prefHeight="244.0" prefWidth="266.0">
+         <top>
+            <Label text="Commande" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <GridPane prefHeight="228.0" prefWidth="253.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="77.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="189.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="22.0" prefWidth="39.0" text="N * Com">
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox prefHeight="26.0" prefWidth="197.0" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <Label alignment="CENTER" prefHeight="22.0" prefWidth="81.0" text="Date" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="22.0" prefWidth="64.0" text="Povider" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox prefHeight="26.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </GridPane.margin>
+                  </DatePicker>
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+      <BorderPane layoutX="369.0" layoutY="45.0" prefHeight="202.0" prefWidth="361.0">
+         <top>
+            <Label text="Article" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="-50.0" />
+               </BorderPane.margin>
+            </Label>
+         </top>
+         <bottom>
+            <GridPane BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="123.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="238.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="22.0" prefWidth="39.0" text="Code">
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox prefHeight="26.0" prefWidth="197.0" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="25.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <Label alignment="CENTER" prefHeight="22.0" prefWidth="81.0" text="Designation" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="22.0" prefWidth="64.0" text="Category" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox prefHeight="26.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="25.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <Label prefHeight="30.0" prefWidth="109.0" text=" Unity" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Label>
+                  <TextField prefHeight="26.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="25.0" left="10.0" right="29.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text=" Price" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text=" Quantity" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField prefHeight="26.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="25.0" left="10.0" right="29.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField prefHeight="26.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="25.0" left="10.0" right="29.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField prefHeight="26.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="25.0" left="10.0" right="29.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </GridPane>
+         </bottom>
+      </BorderPane>
+      <TreeTableView layoutY="324.0" prefHeight="181.0" prefWidth="738.0">
+        <columns>
+          <TreeTableColumn prefWidth="55.0" />
+          <TreeTableColumn prefWidth="95.0" text="index " />
+            <TreeTableColumn prefWidth="137.0" text="Command Number" />
+            <TreeTableColumn prefWidth="122.0" text="Code Article" />
+            <TreeTableColumn prefWidth="103.0" text="Quantity" />
+            <TreeTableColumn prefWidth="115.0" text="Price" />
+            <TreeTableColumn prefWidth="109.0" text="Montant" />
+        </columns>
+      </TreeTableView>
+      <Button layoutX="338.0" layoutY="538.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="91.0" text="Command" />
+   </children>
+</AnchorPane>

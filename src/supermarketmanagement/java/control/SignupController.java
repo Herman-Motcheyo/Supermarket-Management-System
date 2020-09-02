@@ -9,15 +9,19 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.NumberValidator;
 //import com.jfoenix.validation.RequiredFieldValidator;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import supermarketmanagement.java.model.DAO.AdministratorDAO;
+import supermarketmanagement.java.model.DAO.ConnectDatabase;
+import supermarketmanagement.java.model.DAO.DAO;
 import supermarketmanagement.java.model.classe.Administrator;
 import supermarketmanagement.java.utility.Utility;
 import javafx.beans.value.ChangeListener;
@@ -78,23 +82,29 @@ public class SignupController implements Initializable, EventHandler<ActionEvent
 			       femail = email.getText();
 			       fpassword = password.getText();
 			       number = phone_number.getText();
-			       
-			       n =verifyNumber(phone_number, number);
-			       if (n) {
+			       if (Utility.isEmptyTextbox(fname)  || Utility.isEmptyTextbox(lname) || Utility.isEmptyTextbox(uname)  || Utility.isEmptyTextbox(femail) || Utility.isEmptyTextbox(fpassword) || Utility.isEmptyTextbox(number)) {
+			    	    
+			    	   Alert sucess = new Alert(AlertType.ERROR);
+			    	      sucess.setContentText("Only attributes are required");
+			    	      sucess.setResizable(true);
+			    	      sucess.showAndWait();
+			       }else {
+			           n =verifyNumber(phone_number, number);
+				       if (n) {
 
-			    	      long nb = Long.parseLong(number);
-			    	      saveAdmin(fname, femail, lname, fpassword, uname, nb);
-			    	      AlertBox.display("SUcess", "Sucess operation");
-			    	      firstname.clear();
-			    	      lastname.clear();
-			    	      username.clear();
-			    	      email.clear();
-			    	      password.clear();
-			    	      phone_number.clear();
-				}
-			 
+				    	      long nb = Long.parseLong(number);
+				    	      saveAdmin(fname, femail, lname, fpassword, uname, nb);
+				    	      Utility.cleanTextfied(username,phone_number, lastname, firstname, email,password);
+				    	      Alert sucess = new Alert(AlertType.CONFIRMATION);
+				    	      sucess.setContentText("Operations are good execute");
+				    	      sucess.setResizable(true);
+				    	      sucess.showAndWait();
+
+					}
+			       }
 			         
 		}else if(event.getSource().equals(btn_login)) {
+
 		     Node node = (Node) event.getSource();
 
              Stage login = (Stage) node.getScene().getWindow();
@@ -107,15 +117,27 @@ public class SignupController implements Initializable, EventHandler<ActionEvent
 		              } catch (IOException e) {
 		        	e.printStackTrace();
 	   	          }
-  	    Scene scene =new Scene(root);
+		    /*  	Timeline t = new Timeline();
+		    	t.getKeyFrames().add(
+		                new KeyFrame(Duration.seconds(5), new javafx.animation.KeyValue(root.layoutXProperty(), 300))
+		    	);
+		    	t.play();*/
+		    	
+		    	
+  	        Scene scene =new Scene(root);
          	login.setScene(scene);
          	login.setResizable(true);
          	login.show();
+    
 
 		}
 		
 	}
-   
+   /*
+    * cette methode verifie si le numero de téléphone est un nombre 
+    * si on arrive à caster la chaine en  entier alors on retourne true sinon false
+    * 
+    * */
 	private boolean  verifyNumber( JFXTextField text, String value) {
     	
     	try {
@@ -132,6 +154,9 @@ public class SignupController implements Initializable, EventHandler<ActionEvent
 
     
     private void  saveAdmin(String fname,String femail,String lname,String fpassword,String uname,long number) {
+ 
+    	DAO <Administrator, String> ad= new AdministratorDAO(ConnectDatabase.getInstance());
+
     	Administrator admin = new Administrator() ;
     	admin.setUsername(uname);
     	admin.setFirstname(fname);
@@ -139,15 +164,13 @@ public class SignupController implements Initializable, EventHandler<ActionEvent
     	admin.setEmail(femail);
     	admin.setNumber_phone(number);
     	admin.setPassword(fpassword);
-    	
-    	admin.saveAdmin();
+    	 ad.create(admin);
     }
     
     public void validator( JFXTextField name) {
     	
-    	Utility util =new Utility() ;
     if (!name.equals(phone_number)) {
-       util.TextfieldValid(name);   	
+    	Utility.TextfieldValid(name);   	
 
     }else {
     	NumberValidator validate = new NumberValidator();
@@ -164,6 +187,7 @@ public class SignupController implements Initializable, EventHandler<ActionEvent
     }
     
 	}	
+
     
 }
 

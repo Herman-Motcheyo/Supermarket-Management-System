@@ -1,58 +1,52 @@
 package supermarketmanagement.java.control;
 
-import com.jfoenix.controls.JFXButton;
+import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class HomeController {
 
     @FXML
-    private JFXButton user_article;
+    private Button stock;
 
     @FXML
-    private JFXButton fature;
+    private Button sold;
 
+    private Stage stockMana =null;
+    private Node node = null;
+    
     @FXML
-    private JFXButton delete_info;
-
-    @FXML
-    private JFXButton user_info;
-
-    @FXML
-    private JFXButton user_customer;
-
-    @FXML
-    private JFXButton view_info;
-
-    @FXML
-    void handleBuildFacture(ActionEvent event) {
-
+    void goToSold(ActionEvent event) {
+        node = (Node) event.getSource();
+        loadFxml("category.fxml");
     }
 
     @FXML
-    void handleDeleteEntite(ActionEvent event) {
-
+    void goToStock(ActionEvent event) {
+        node = (Node) event.getSource();
+        loadFxml("dashbord.fxml");
     }
-
-    @FXML
-    void handleSaveInfoArticle(ActionEvent event) {
-
+    
+    private void loadFxml( String file) {
+   
+        stockMana = (Stage)node.getScene().getWindow();
+        stockMana.close();
+    	try {	  
+			AnchorPane root = FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/"+file));
+			Scene scene = new Scene(root);
+			stockMana.setScene(scene);
+			stockMana.setTitle("Dashbord");
+			stockMana.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
     }
-
-    @FXML
-    void handleSaveInfoCustomer(ActionEvent event) {
-
-    }
-
-    @FXML
-    void handleSaveInfoUser(ActionEvent event) {
-
-    }
-
-    @FXML
-    void handleViewQuantity(ActionEvent event) {
-
-    }
-
 }

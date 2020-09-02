@@ -6,6 +6,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TreeTableColumn?>
@@ -36,12 +39,12 @@
                   <InnerShadow />
                </effect>
                <HBox.margin>
-                  <Insets left="150.0" top="15.0" />
+                  <Insets left="200.0" top="15.0" />
                </HBox.margin>
             </Text>
          </children>
       </HBox>
-      <HBox layoutX="-3.0" layoutY="70.0" prefHeight="50.0" prefWidth="1248.0">
+      <HBox layoutX="-3.0" layoutY="70.0" prefHeight="50.0" prefWidth="1248.0" style="visibility: false;">
          <children>
             <JFXButton prefHeight="50.0" prefWidth="194.0" text="Management of stock" />
             <JFXButton prefHeight="50.0" prefWidth="176.0" text="Management of enter" />
@@ -133,5 +136,67 @@
             <TreeTableColumn prefWidth="148.0" text="Storehouse" />
          </columns>
       </JFXTreeTableView>
+      <JFXButton layoutY="648.0" prefHeight="41.0" prefWidth="115.0" text="NEXT" />
+      <JFXButton layoutX="182.0" layoutY="648.0" prefHeight="41.0" prefWidth="115.0" text="PREV" />
+      <JFXButton layoutX="1130.0" layoutY="648.0" prefHeight="41.0" prefWidth="115.0" text="EXCEL" />
+      <JFXButton layoutX="1034.0" layoutY="648.0" prefHeight="41.0" prefWidth="89.0" text="WORD" />
+      <MenuBar layoutX="193.0" layoutY="70.0" opacity="0.94" prefHeight="36.0" prefWidth="857.0" style="-fx-background-color: #CCCCCC;">
+        <menus>
+            <Menu mnemonicParsing="false" text="File">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Stock">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Management of stock" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Management of input">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Enter New Product in database" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Management of Output">
+            <items>
+              <MenuItem mnemonicParsing="false" text="out product of stock" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Commande">
+              <items>
+                <MenuItem mnemonicParsing="false" text="New" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Provider">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="Modify provider" />
+                <MenuItem mnemonicParsing="false" text="New provider" />
+                  <MenuItem mnemonicParsing="false" text="delete provider" />
+                  <MenuItem mnemonicParsing="false" text="list of provider" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Reception">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Category">
+              <items>
+                <MenuItem mnemonicParsing="false" text="New" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="help">
+              <items>
+                <MenuItem mnemonicParsing="false" text="about stock management" />
+                  <MenuItem mnemonicParsing="false" text="Check for update" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <JFXButton layoutX="8.0" layoutY="75.0" prefHeight="26.0" prefWidth="134.0" style="-fx-background-color: #000000#000000;" text="Rollback to main" textFill="#fffefe">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

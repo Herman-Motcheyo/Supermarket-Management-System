@@ -5,6 +5,8 @@ package supermarketmanagement.java.model.DAO;
 	 * @author herman
 	 * */
 import java.sql.Connection;
+import java.sql.SQLException;
+
 
 public abstract class DAO<T,O>{
 	
@@ -42,6 +44,10 @@ public abstract class DAO<T,O>{
      * @return Object
      * */
     public abstract T find(O id);
-    
-    
+
+	public boolean find(String user, String pass) throws SQLException {
+		return false;
+	}
+
+
 }

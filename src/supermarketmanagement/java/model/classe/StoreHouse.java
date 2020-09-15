@@ -5,13 +5,14 @@ package supermarketmanagement.java.model.classe;
  * */
 public class StoreHouse {
 
+	public StoreHouse(String nameStore, String descriptionStore) {
+		this.nameStore = nameStore;
+		this.descriptionStore = descriptionStore;
+	}
 	public StoreHouse() {}
 
-	public StoreHouse(String nameStore) {
-		this.nameStore = nameStore;
-	}
-
 	private String nameStore;
+	private  String descriptionStore;
 
 	public String getNameStore() {
 		return nameStore;
@@ -19,5 +20,11 @@ public class StoreHouse {
 
 	public void setNameStore(String nameStore) {
 		this.nameStore = nameStore;
+	}
+	public String getDescriptionStore() {
+		return descriptionStore;
+	}
+	public void setDescriptionStore(String descriptionStore) {
+		this.descriptionStore = descriptionStore;
 	}
 }

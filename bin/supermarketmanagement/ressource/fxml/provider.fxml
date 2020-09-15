@@ -2,69 +2,68 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="790.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="790.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="supermarketmanagement.java.control.ProviderController">
    <children>
       <BorderPane prefHeight="490.0" prefWidth="610.0">
          <top>
-            <HBox prefHeight="86.0" prefWidth="610.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="48.0" prefWidth="784.0" style="-fx-background-color: #097eba;" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="87.0" prefWidth="132.0">
-                     <graphic>
-                        <ImageView fitHeight="91.0" fitWidth="206.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/logo%20herman.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Label>
-                  <Text fill="#1b1a19" strokeType="OUTSIDE" strokeWidth="0.0" text="Provider" wrappingWidth="153.7294921875">
+                  <Pane prefHeight="81.0" prefWidth="160.0" style="-fx-background-color: #05071E;" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Provider Management" wrappingWidth="286.7294921875">
                      <font>
                         <Font name="Nakula" size="30.0" />
                      </font>
                      <HBox.margin>
-                        <Insets bottom="15.0" left="100.0" right="15.0" top="15.0" />
+                        <Insets bottom="15.0" left="160.0" right="15.0" top="15.0" />
                      </HBox.margin>
                   </Text>
                </children>
             </HBox>
          </top>
          <left>
-            <VBox prefHeight="399.0" prefWidth="157.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="480.0" prefWidth="157.0" style="-fx-background-color: #05071E;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #000000; -fx-background-radius: 15;" text="New Provider" textFill="WHITE">
+                  <JFXButton fx:id="newP" alignment="CENTER" contentDisplay="CENTER" onAction="#newProvider" prefHeight="36.0" prefWidth="119.0" style="-fx-background-color: #000000; -fx-background-radius: 15;" text="Save provider" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #000000; -fx-background-radius: 15;" text="Modify" textFill="WHITE">
+                  <JFXButton fx:id="modifyP" alignment="CENTER" contentDisplay="CENTER" onAction="#UpdateProvider" prefHeight="35.0" prefWidth="124.0" ripplerFill="#353030" style="-fx-background-color: #000000; -fx-background-radius: 15;" text="Update" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #000000; -fx-background-radius: 15;" text="SEARCH" textFill="WHITE">
+                  <JFXButton fx:id="searchP" alignment="CENTER" contentDisplay="CENTER" onAction="#searchProvider" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #000000; -fx-background-radius: 15;" text="SEARCH" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #000000; -fx-background-radius: 15;" text="DELETE" textFill="WHITE">
+                  <JFXButton fx:id="deleteP" alignment="CENTER" contentDisplay="CENTER" onAction="#deleteProvider" prefHeight="29.0" prefWidth="124.0" style="-fx-background-color: #FF1E00; -fx-background-radius: 15;" text="DELETE" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_delete_26px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #000000; -fx-background-radius: 15;" text="Dashbord" textFill="WHITE">
+                  <JFXButton fx:id="dashbord" alignment="CENTER" contentDisplay="CENTER" onAction="#returnDashbord" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #000000; -fx-background-radius: 15;" text="Dashbord" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
@@ -73,61 +72,81 @@
             </VBox>
          </left>
          <center>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="617.0" style="-fx-background-color: #CCCCCC;" BorderPane.alignment="CENTER">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="627.0" style="-fx-background-color: #02020A;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXTextField labelFloat="true" layoutX="37.0" layoutY="71.0" prefHeight="26.0" prefWidth="193.0" promptText="Code Of Product">
+                  <JFXTextField fx:id="codeP" labelFloat="true" layoutX="37.0" layoutY="30.0" prefHeight="26.0" prefWidth="193.0" promptText="Code Of Product">
                      <font>
                         <Font name="System Bold Italic" size="13.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTreeTableView layoutX="14.0" layoutY="154.0" prefHeight="197.0" prefWidth="602.0">
-                     <columns>
-                        <TreeTableColumn prefWidth="105.0" text="Name" />
-                        <TreeTableColumn prefWidth="125.0" text="Code" />
-                        <TreeTableColumn prefWidth="127.0" text="Adresse" />
-                        <TreeTableColumn prefWidth="149.0" text="Email" />
-                        <TreeTableColumn prefWidth="134.0" text="Mobile Phone" />
-                     </columns>
-                  </JFXTreeTableView>
-                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Save" textFill="WHITE" />
-                  <JFXButton buttonType="RAISED" layoutX="133.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Next" textFill="WHITE" />
-                  <JFXButton buttonType="RAISED" layoutX="254.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Preview" textFill="WHITE" />
-                  <JFXButton buttonType="RAISED" layoutX="528.0" layoutY="360.0" prefHeight="26.0" prefWidth="93.0" style="-fx-background-color: #000000;" text="Excel" textFill="WHITE" />
-                  <JFXButton buttonType="RAISED" layoutX="391.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Word" textFill="WHITE" />
-                  <JFXTextField labelFloat="true" layoutX="37.0" layoutY="17.0" prefHeight="26.0" prefWidth="192.0" promptText="Name">
+                  <JFXButton fx:id="refresh" buttonType="RAISED" layoutX="83.0" layoutY="375.0" onAction="#refreshProvider" prefHeight="24.0" prefWidth="101.0" style="-fx-background-color: #41803C;" text="Refresh" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_refresh_30px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></JFXButton>
+                  <JFXButton fx:id="excel" buttonType="RAISED" layoutX="401.0" layoutY="373.0" onAction="#exportExcel" prefHeight="26.0" prefWidth="93.0" style="-fx-background-color: #000000;" text="Excel" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="21.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/photo_2020-09-14_23-11-58.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></JFXButton>
+                  <JFXButton fx:id="word" buttonType="RAISED" layoutX="247.0" layoutY="373.0" onAction="#exportWord" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Word" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/photo_2020-09-14_23-15-15.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></JFXButton>
+                  <JFXTextField fx:id="nameP" labelFloat="true" layoutX="37.0" layoutY="77.0" prefHeight="26.0" prefWidth="192.0" promptText="Name">
                      <font>
                         <Font name="System Bold Italic" size="13.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField labelFloat="true" layoutX="260.0" layoutY="17.0" prefHeight="26.0" prefWidth="176.0" promptText="Adresse">
+                  <JFXTextField fx:id="adresseP" labelFloat="true" layoutX="260.0" layoutY="17.0" prefHeight="26.0" prefWidth="176.0" promptText="Adresse">
                      <font>
                         <Font name="System Bold Italic" size="13.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField labelFloat="true" layoutX="260.0" layoutY="71.0" prefHeight="26.0" prefWidth="176.0" promptText="Email">
+                  <JFXTextField fx:id="emailP" labelFloat="true" layoutX="260.0" layoutY="71.0" prefHeight="26.0" prefWidth="176.0" promptText="Email">
                      <font>
                         <Font name="System Bold Italic" size="13.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField labelFloat="true" layoutX="37.0" layoutY="117.0" prefHeight="26.0" prefWidth="176.0" promptText="mobile phone">
+                  <JFXTextField fx:id="mobileP" labelFloat="true" layoutX="37.0" layoutY="117.0" prefHeight="26.0" prefWidth="176.0" promptText="mobile phone">
                      <font>
                         <Font name="System Bold Italic" size="13.0" />
                      </font>
                   </JFXTextField>
-                  <VBox layoutX="439.0" layoutY="1.0" prefHeight="113.0" prefWidth="180.0" style="-fx-border-color: #000000;">
+                  <VBox layoutX="439.0" layoutY="1.0" prefHeight="113.0" prefWidth="180.0" style="-fx-background-radius: 50px 50px; -fx-background-color: #353030;">
                      <children>
-                        <JFXTextField labelFloat="true" prefHeight="41.0" prefWidth="136.0" promptText="Name">
+                        <JFXTextField fx:id="nameOperation" focusColor="#40a85d" labelFloat="true" prefHeight="41.0" prefWidth="136.0" promptText="code for operation" style="-fx-background-color: #FFFFFF;" unFocusColor="#d7311f">
                            <font>
-                              <Font name="System Italic" size="13.0" />
+                              <Font name="Liberation Mono Bold Italic" size="15.0" />
                            </font>
                         </JFXTextField>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="If you want to do differents operations at the left side, enter name of provider " wrappingWidth="175.7294921875">
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="If you want to do differents operations at the left side, enter code of provider " textAlignment="CENTER" wrappingWidth="175.7294921875">
                            <font>
                               <Font name="Nakula" size="13.0" />
                            </font>
                         </Text>
                      </children>
                   </VBox>
+                  <TableView fx:id="col_tablle" layoutX="-1.0" layoutY="153.0" prefHeight="212.0" prefWidth="634.0">
+                    <columns>
+                      <TableColumn fx:id="col_code" prefWidth="108.0" text="Code" />
+                      <TableColumn fx:id="col_name" prefWidth="121.0" text="Name" />
+                        <TableColumn fx:id="col_adresse" prefWidth="123.0" text="Adresse" />
+                        <TableColumn fx:id="col_email" prefWidth="149.0" text="Email" />
+                        <TableColumn fx:id="col_mobile" prefWidth="115.0" text="Mobile Phone" />
+                    </columns>
+                  </TableView>
+                  <JFXButton fx:id="submit" alignment="CENTER" contentDisplay="CENTER" layoutX="473.0" layoutY="117.0" onAction="#submitCode" prefHeight="21.0" prefWidth="112.0" ripplerFill="#353030" style="-fx-background-color: #000000; -fx-background-radius: 15;" text="Submit code" textFill="WHITE" />
                </children>
             </AnchorPane>
          </center>

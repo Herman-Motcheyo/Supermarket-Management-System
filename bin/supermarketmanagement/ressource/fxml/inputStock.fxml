@@ -1,38 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="643.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="643.0" style="-fx-background-color: #05071E; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox layoutX="-1.0" prefHeight="58.0" prefWidth="643.0" style="-fx-background-color: #097eba;">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cette fenetre Permet de voir les Entrées des differentes transactions" wrappingWidth="555.7294921875">
-               <font>
-                  <Font name="System Bold Italic" size="17.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="40.0" top="12.0" />
-               </HBox.margin>
-            </Text>
-         </children>
-      </HBox>
-      <Label alignment="CENTER" layoutX="23.0" layoutY="74.0" prefHeight="33.0" prefWidth="126.0" text="Code to enter" textAlignment="JUSTIFY" />
-      <Label alignment="CENTER" layoutX="348.0" layoutY="74.0" prefHeight="33.0" prefWidth="67.0" text="Qauntity" textAlignment="JUSTIFY" />
-      <Label alignment="CENTER" layoutX="348.0" layoutY="119.0" prefHeight="33.0" prefWidth="40.0" text="Date" textAlignment="JUSTIFY" />
-      <JFXTextField layoutX="149.0" layoutY="77.0" prefHeight="20.0" prefWidth="155.0" />
-      <Label alignment="CENTER" layoutX="33.0" layoutY="119.0" prefHeight="33.0" prefWidth="50.0" text="Price" textAlignment="JUSTIFY" />
-      <JFXTextField layoutX="149.0" layoutY="123.0" prefHeight="0.0" prefWidth="155.0" />
-      <JFXTextField layoutX="441.0" layoutY="77.0" />
+      <Label alignment="CENTER" layoutX="23.0" layoutY="74.0" prefHeight="33.0" prefWidth="126.0" text="Code to enter" textAlignment="JUSTIFY" textFill="#8c8888" />
+      <Label alignment="CENTER" layoutX="348.0" layoutY="74.0" prefHeight="33.0" prefWidth="67.0" text="Qauntity" textAlignment="JUSTIFY" textFill="#8c8888" />
+      <Label alignment="CENTER" layoutX="348.0" layoutY="119.0" prefHeight="33.0" prefWidth="40.0" text="Date" textAlignment="JUSTIFY" textFill="#8c8888" />
+      <Label alignment="CENTER" layoutX="33.0" layoutY="119.0" prefHeight="33.0" prefWidth="50.0" text="Price" textAlignment="JUSTIFY" textFill="#8c8888" />
       <DatePicker layoutX="441.0" layoutY="123.0" />
       <JFXTreeTableView layoutY="154.0" prefHeight="197.0" prefWidth="643.0">
          <columns>
@@ -48,5 +31,34 @@
       <JFXButton buttonType="RAISED" layoutX="254.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Preview" textFill="WHITE" />
       <JFXButton buttonType="RAISED" layoutX="528.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Excel" textFill="WHITE" />
       <JFXButton buttonType="RAISED" layoutX="391.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Word" textFill="WHITE" />
+      <Pane prefHeight="65.0" prefWidth="643.0" style="-fx-background-color: #097eba; -fx-background-radius: 5;">
+         <children>
+            <Label layoutX="25.0" layoutY="17.0" prefHeight="21.0" prefWidth="600.0" text="Cette fenetre Permet de voir les Entrées des differentes " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="240.0" layoutY="43.0" prefHeight="21.0" prefWidth="139.0" text="transactions" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TextField layoutX="148.0" layoutY="77.0" prefHeight="26.0" prefWidth="172.0" promptText="code" style="-fx-font: red;">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="148.0" layoutY="123.0" prefHeight="26.0" prefWidth="172.0" promptText="price" style="-fx-font: red;">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="442.0" layoutY="77.0" prefHeight="26.0" prefWidth="198.0" promptText="quantity" style="-fx-font: red;">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

@@ -1,0 +1,19 @@
+.sidebar{
+    -fx-background-color: #05071E;
+}
+.sidebar-center{
+    -fx-background-color: #02020A;
+}
+/*.sidebar-center:hover{
+    -fx-background-color: #101660;
+}*/
+.rightbar{
+    -fx-background-color: #02020A;
+}
+.button-side:hover{
+	-fx-background-color:#101660;
+}
+.button-side{
+	-fx-background-color:#05071E;
+	-fx-background-raduis:40px
+}

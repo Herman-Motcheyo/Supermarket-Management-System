@@ -49,5 +49,10 @@ public abstract class DAO<T,O>{
 		return false;
 	}
 
+	public boolean findString(String code) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 
 }

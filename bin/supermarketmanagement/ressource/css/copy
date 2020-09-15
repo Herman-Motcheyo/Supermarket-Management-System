@@ -1,0 +1,179 @@
+    @FXML
+    private AnchorPane anchorPane;
+
+    @FXML
+    private Button men_storehouse;
+
+    @FXML
+    private Button men_provider;
+
+    @FXML
+    private Button men_commande;
+
+    @FXML
+    private Button men_enter;
+
+    @FXML
+    private Button men_output;
+
+    @FXML
+    private Button men_category;
+
+    @FXML
+    private Button help;
+
+    @FXML
+    private Button men_product;
+
+    @FXML
+    private TextField codeforOp;
+
+    @FXML
+    private TextField code;
+
+    @FXML
+    private TextField unity;
+
+    @FXML
+    private TextField quantity;
+
+    @FXML
+    private TextField price;
+
+    @FXML
+    private TextField min_quantity;
+
+    @FXML
+    private ComboBox<String> provider;
+
+    @FXML
+    private ComboBox<String> category;
+
+    @FXML
+    private ComboBox<String> storehouse;
+
+    @FXML
+    private TextArea designation;
+
+    @FXML
+    private Button save;
+
+    @FXML
+    private Button delete;
+
+    @FXML
+    private Button update;
+
+    @FXML
+    private Button search;
+
+    @FXML
+    private JFXButton refresh;
+
+    @FXML
+    private TableView<Provider> table;
+
+    @FXML
+    private TableColumn<Provider, String> col_code;
+
+    @FXML
+    private TableColumn<Provider, String> col_designation;
+
+    @FXML
+    private TableColumn<Provider, String> col_category;
+
+    @FXML
+    private TableColumn<Provider, Integer> col_unity;
+
+    @FXML
+    private TableColumn<Provider, Integer> col_quantity;
+
+    @FXML
+    private TableColumn<Provider, Integer> col_minqty;
+
+    @FXML
+    private TableColumn<Provider, Float> col_price;
+
+    @FXML
+    private TableColumn<Provider, String> col_provider;
+
+    @FXML
+    private TableColumn<Provider, String> col_storehouse;
+
+    @FXML
+    private Button word;
+
+    @FXML
+    private Button excel;
+
+    @FXML
+    void refreshProvider(ActionEvent event) {
+
+    }
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// loadComboProvider();
+		// loadCombocategory();
+		// loadComboStorehouse();
+	}
+    
+    boolean rep ;
+    Resultset rs  = null; 
+    Service se = new Service();
+    String codeP = code.getText();String designationP = designation.getText();
+    String storehouseP = storehouse.getValue(); String categoryP = category.getValue();
+    String providerP = provider.getValue();
+    String unityP = unity.getText(); String priceP = price.getText(); String qty = quantity.getText();String mqty = min_quantity.getText();
+    
+    
+    @FXML
+    void addProduct(ActionEvent e) {
+       /*   if(Utility.isEmptyTextbox(categoryP) || Utility.isEmptyTextbox(codeP)|| Utility.isEmptyTextbox(designationP) || Utility.isEmptyTextbox(mqty)
+        		  || Utility.isEmptyTextbox(priceP) || Utility.isEmptyTextbox(providerP) || Utility.isEmptyTextbox(qty) || Utility.isEmptyTextbox(storehouseP)
+        		  || Utility.isEmptyTextbox(unityP)) {
+        	  AlertBox.display("Error ", "One or many attribues are empty");
+        	  
+          }else {
+        	  if(Utility.verifyNumber(mqty) || Utility.verifyNumber(priceP) || Utility.verifyNumber(qty) || Utility.verifyNumber(unityP)) {
+        		  System.out.println("good");
+        	  }else {
+        		  AlertBox.display("Error", "We required number to price,quantity,minqty and unity ");
+        	  }
+          }*/
+    }
+	
+	
+   /* public void loadComboProvider() {
+    	try {
+			rs =(Resultset) se.loadcombobos("provider");
+			while(((ResultSet) rs).next()) {
+				provider.getItems().addAll(((ResultSet) rs).getString("namepro") );
+			}
+		} catch (SQLException e) {
+			AlertBox.display("Error", "Failed to load combo provider");
+			e.printStackTrace();
+		}
+    }
+    public void loadComboStorehouse() {
+    	try {
+			rs =(Resultset) se.loadcombobos("storehouse");
+			while(((ResultSet) rs).next()) {
+				storehouse.getItems().addAll(((ResultSet) rs).getString("nameStore") );
+			}
+		} catch (SQLException e) {
+			AlertBox.display("Error", "Failed to load combo storehouse");
+			e.printStackTrace();
+		}
+    }
+    
+    public void loadCombocategory() {
+    	try {
+			rs =(Resultset) se.loadcombobos("category");
+			while(((ResultSet) rs).next()) {
+			  category.getItems().add(((ResultSet) rs).getString("nameCat"));
+			}
+		} catch (SQLException e) {
+			AlertBox.display("Error", "Failed to load combo category");
+			e.printStackTrace();
+		}
+    }*/

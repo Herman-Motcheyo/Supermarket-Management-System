@@ -17,7 +17,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage login) throws Exception {
 	 // FXMLLoader loader =new FXMLLoader(getClass().getResource("/supermarketmanagement/ressource/fxml/login.fxml"));
-		AnchorPane root=  FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/category.fxml")) ;
+	 AnchorPane root=  FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/Homeb.fxml")) ;
 	 // StackPane root = FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/signup.fxml"));
 		Scene scene =new Scene(root); 
 	 login.setScene(scene);

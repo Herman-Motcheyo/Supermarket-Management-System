@@ -4,9 +4,9 @@ public class Product {
 	
 	public Product() {	}
 	
-	public Product(String codeP, String designationP, int unityP, float priceP, int qteP, String codePro,
+	public Product(String codeP, String designationP, int unityP, float priceP,int minquantity, int qteP, String codePro,
 			String nameCat, String nameStore) {
-		super();
+	
 		this.codeP = codeP;
 		this.designationP = designationP;
 		this.unityP = unityP;
@@ -15,17 +15,27 @@ public class Product {
 		this.codePro = codePro;
 		this.nameCat = nameCat;
 		this.nameStore = nameStore;
+		this.minquantity = minquantity;
 	}
 	
 	private String codeP;     
     private String designationP ;
     private int unityP ; 
     private float priceP ; 
-    private int qteP;        
-    private String codePro ; /* come from @Provider */
+    private int qteP; 
+    private int minquantity;
+
+	private String codePro ; /* come from @Provider */
     private String nameCat  ; /*come from @Categorie */
     private String nameStore ; /*come form @nameStore*/
-	
+    public int getMinquantity() {
+		return minquantity;
+	}
+
+	public void setMinquantity(int minquantity) {
+		this.minquantity = minquantity;
+	}
+
     public String getCodeP() {
 		return codeP;
 	}

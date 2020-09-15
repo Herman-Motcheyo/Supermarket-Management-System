@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="1217.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="supermarketmanagement.java.control.HomebController">
+   <children>
+      <BorderPane layoutX="84.0" layoutY="49.0" prefHeight="651.0" prefWidth="1217.0" AnchorPane.bottomAnchor="-29.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <AnchorPane prefHeight="564.0" prefWidth="206.0" styleClass="sidebar" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="31.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_home_32px.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="men_storehouse" layoutX="56.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" styleClass="button-side" text="Storehouse" textFill="#868491" />
+                  <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="30.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_person_32px.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="men_provider" layoutX="65.0" layoutY="236.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="76.0" styleClass="button-side" text="Provider" textFill="#868491" />
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="34.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Bill_50px_2.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="men_commande" layoutX="62.0" layoutY="276.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="98.0" styleClass="button-side" text="Commande" textFill="#868491" />
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="33.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_package_24px.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="men_enter" layoutX="63.0" layoutY="322.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="69.0" styleClass="button-side" text="Enter" textFill="#868491" />
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="34.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_package_24px.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="men_output" layoutX="59.0" layoutY="362.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="76.0" styleClass="button-side" text="Output" textFill="#868491" />
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="34.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_package_24px.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="men_category" layoutX="62.0" layoutY="399.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" styleClass="button-side" text="Category" textFill="#868491" />
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="42.0" layoutY="504.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_slider_30px.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="help" layoutX="69.0" layoutY="500.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="59.0" styleClass="button-side" text="Help" textFill="#868491" />
+                  <ImageView fitHeight="18.0" fitWidth="20.0" layoutX="34.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_package_24px.png" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutX="11.0" layoutY="80.0" prefHeight="58.0" prefWidth="206.0" style="-fx-background-color: #097eba; -fx-background-radius: 5;" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="80.0">
+                     <children>
+                        <Label layoutX="25.0" layoutY="17.0" text="Home Stock" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button fx:id="men_product" layoutX="57.0" layoutY="448.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" styleClass="button-side" text="Product" textFill="#868491" />
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="627.0" prefWidth="703.0" styleClass="sidebar-center" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="58.0" prefWidth="588.0" style="-fx-background-color: #097eba; -fx-background-radius: 5;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="110.0" layoutY="19.0" text="Supermarket Management System by Herman" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <HBox layoutX="398.0" layoutY="58.0" prefHeight="27.0" prefWidth="188.0" style="-fx-background-color: transparent;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
+                     <children>
+                        <TextField fx:id="codeforOp" prefHeight="26.0" prefWidth="188.0" promptText="Search product bycode">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="20.0" fitWidth="18.0" layoutX="18.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_search_26px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Pane layoutX="25.0" layoutY="84.0" prefHeight="220.0" prefWidth="592.0" AnchorPane.bottomAnchor="323.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="84.0">
+                     <children>
+                        <Label layoutX="26.0" layoutY="15.0" text="Code" textFill="#868491">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="code" layoutX="199.0" layoutY="11.0" prefHeight="26.0" prefWidth="172.0" promptText="code">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="unity" layoutX="199.0" layoutY="53.0" prefHeight="26.0" prefWidth="172.0" promptText="unity">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="quantity" layoutX="199.0" layoutY="92.0" prefHeight="26.0" prefWidth="172.0" promptText="quantity">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="price" layoutX="199.0" layoutY="137.0" prefHeight="26.0" prefWidth="172.0" promptText="price">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="25.0" layoutY="57.0" text="Unity" textFill="#868491">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label layoutX="23.0" layoutY="101.0" text="Quantity" textFill="#868491">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="137.0" text="Price" textFill="#868491">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label layoutX="484.0" layoutY="15.0" text="Minimun Quantity" textFill="#868491">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="min_quantity" layoutX="663.0" layoutY="11.0" prefHeight="26.0" prefWidth="152.0" promptText="min qty">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="484.0" layoutY="74.0" text="Provider" textFill="#868491">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label layoutX="481.0" layoutY="128.0" text="Category" textFill="#868491">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label layoutX="484.0" layoutY="197.0" text="Storehouse" textFill="#868491">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="provider" layoutX="664.0" layoutY="66.0" prefWidth="150.0" promptText="provider" style="-fx-background-color: #05071E;" />
+                        <ComboBox fx:id="category" layoutX="664.0" layoutY="124.0" prefWidth="150.0" promptText="category" style="-fx-background-color: #05071E;" />
+                        <ComboBox fx:id="storehouse" layoutX="664.0" layoutY="187.0" prefWidth="150.0" promptText="storehouse" style="-fx-background-color: #05071E;" />
+                        <Label layoutX="13.0" layoutY="182.0" text="Designation" textFill="#868491">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <TextArea fx:id="designation" layoutX="199.0" layoutY="170.0" prefHeight="41.0" prefWidth="216.0" promptText="designation" />
+                        <Button fx:id="save" layoutX="415.0" layoutY="215.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="26.0" prefWidth="76.0" styleClass="button-side" text="Save" textFill="WHITE" />
+                        <Button fx:id="delete" layoutX="879.0" layoutY="193.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="76.0" styleClass="button-side" text="delete" textFill="#eb1818" />
+                        <Button fx:id="update" layoutX="879.0" layoutY="124.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="76.0" styleClass="button-side" text="Update" textFill="WHITE" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="search" layoutX="879.0" layoutY="62.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="76.0" styleClass="button-side" text="search" textFill="WHITE" />
+                        <JFXButton fx:id="refresh" buttonType="RAISED" layoutX="523.0" layoutY="215.0" onAction="#refreshProvider" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #41803C;" text="Refresh" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons8_refresh_30px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <TableView fx:id="table" layoutX="12.0" layoutY="364.0" prefHeight="218.0" prefWidth="1008.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="364.0">
+                     <columns>
+                        <TableColumn fx:id="col_code" prefWidth="93.0" text="Code" />
+                        <TableColumn fx:id="col_designation" prefWidth="111.0" text="Designation" />
+                        <TableColumn fx:id="col_category" prefWidth="111.0" text="category" />
+                        <TableColumn fx:id="col_unity" prefWidth="117.0" text="Unity" />
+                        <TableColumn fx:id="col_quantity" prefWidth="117.0" text="Quantity" />
+                        <TableColumn fx:id="col_minqty" prefWidth="122.0" text="Mini Quantity" />
+                        <TableColumn fx:id="col_price" prefWidth="105.0" text="Price" />
+                        <TableColumn fx:id="col_provider" prefWidth="100.0" text="Provider" />
+                        <TableColumn fx:id="col_storehouse" prefWidth="131.0" text="Storehouse" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="word" layoutX="774.0" layoutY="593.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" styleClass="button-side" textFill="#868491">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="49.0" layoutX="25.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/photo_2020-09-14_23-15-15.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="excel" layoutX="901.0" layoutY="593.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" styleClass="button-side" textFill="#868491">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="49.0" layoutX="25.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/photo_2020-09-14_23-11-58.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

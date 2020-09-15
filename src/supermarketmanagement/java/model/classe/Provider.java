@@ -1,8 +1,9 @@
 package supermarketmanagement.java.model.classe;
+
 /*
  * this class is use to have information about provider/fournisseur in french
  * **/
-public class Provider {
+public class Provider{
 	
   public Provider(String codePro, String namePro, String adressePro, String numberPro, String mailPro) {
 	

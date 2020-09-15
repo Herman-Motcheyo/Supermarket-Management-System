@@ -27,7 +27,7 @@ public class Service {
 				rs= st.executeQuery(sql);
 				return rs;
 		}else {
-		    sql = " select namePro from provider";
+		    sql = " select codePro from provider";
 				st = connect.createStatement();
 				rs= st.executeQuery(sql);
 				return rs;

@@ -5,11 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import supermarketmanagement.java.control.AlertBox;
 import supermarketmanagement.java.model.classe.Administrator;
+import supermarketmanagement.java.utility.Utility;
 
 public class AdministratorDAO extends DAO<Administrator,String>{
 
@@ -32,11 +30,7 @@ public class AdministratorDAO extends DAO<Administrator,String>{
 	        if(find(object_.getUsername(), object_.getPassword(),object_.getEmail()))
 				st.execute(query);
 	        else {
-				Alert problem =new Alert(AlertType.ERROR);
-				problem.setTitle("Error");
-				problem.setHeaderText("These informations are also use( email and username)");
-	            problem.setContentText("Ces informations ne sont pas à etre utiliser");
-	            problem.showAndWait();
+	        	Utility.printError();
 	        }
 	        	
 	   

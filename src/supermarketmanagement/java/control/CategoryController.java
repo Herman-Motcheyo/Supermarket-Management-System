@@ -1,9 +1,7 @@
 package supermarketmanagement.java.control;
 
 import java.net.URL;
-import java.sql.Connection;
 import java.util.ResourceBundle;
-
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,6 +27,7 @@ public class CategoryController implements Initializable {
     @FXML
     private Label visibleLa;
     private String description,name;
+    Categorie c ;
     
     /* 
      * this method is used to add Category to product
@@ -42,7 +41,7 @@ public class CategoryController implements Initializable {
 			nameCat.setPromptText("Name are required");
 			visibleLa.setVisible(true);
 		}else {
-			saveCategory();
+			saveCategory(name,description);
 			descriptionCat.clear();nameCat.clear();
 		}
     }
@@ -53,7 +52,13 @@ public class CategoryController implements Initializable {
      * */
     @FXML
     public void deleteCategoryHandle(ActionEvent event) {
-    	
+    	 name = nameCat.getText();	 
+    	 if (Utility.isEmptyTextbox(name) ) {
+			nameCat.setPromptText("Name are required");
+		}else {
+			 deleteCategory(name);
+			descriptionCat.clear();nameCat.clear();
+		}
     }
 
 	@Override
@@ -61,9 +66,20 @@ public class CategoryController implements Initializable {
 	   Utility.TextfieldValid(nameCat);
 	   visibleLa.setVisible(false);
 	}
- public void saveCategory() {
-	DAO <Categorie,String> cat= new CategorieDAO(ConnectDatabase.getInstance());
+	
+    private void saveCategory(String name , String description) {
+	
+	 DAO <Categorie,String> cat= new CategorieDAO(ConnectDatabase.getInstance());
+	 c = new Categorie(name,description);
+	 cat.create(c);
  }
+    private void deleteCategory(String name) {
+    	DAO <Categorie,String> cat= new CategorieDAO(ConnectDatabase.getInstance());
+    	c=cat.find(name);
+    	if(c != null) {
+    	   cat.delete(c);
+    	}
 
+   }
 
 }

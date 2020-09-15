@@ -1,0 +1,17 @@
+.sidebar {
+  -fx-background-color: #05071e;
+}
+.sidebar-center {
+  -fx-background-color: #02020a;
+}
+/*.sidebar-center:hover{
+    -fx-background-color: #101660;
+}*/
+
+.button-side:hover {
+  -fx-background-color: #101660;
+}
+.button-side {
+  -fx-background-color: #05071e;
+  -fx-background-raduis: 40px;
+}

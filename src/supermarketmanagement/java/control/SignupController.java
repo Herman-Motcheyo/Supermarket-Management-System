@@ -7,8 +7,6 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.validation.NumberValidator;
-//import com.jfoenix.validation.RequiredFieldValidator;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,13 +17,13 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import supermarketmanagement.java.model.DAO.AdministratorDAO;
 import supermarketmanagement.java.model.DAO.ConnectDatabase;
 import supermarketmanagement.java.model.DAO.DAO;
 import supermarketmanagement.java.model.classe.Administrator;
 import supermarketmanagement.java.utility.Utility;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -89,7 +87,7 @@ public class SignupController implements Initializable, EventHandler<ActionEvent
 			    	      sucess.setResizable(true);
 			    	      sucess.showAndWait();
 			       }else {
-			           n =verifyNumber(phone_number, number);
+			           n =Utility.verifyNumber(phone_number, number);
 				       if (n) {
 
 				    	      long nb = Long.parseLong(number);
@@ -104,6 +102,11 @@ public class SignupController implements Initializable, EventHandler<ActionEvent
 			       }
 			         
 		}else if(event.getSource().equals(btn_login)) {
+            FadeTransition transition = new FadeTransition(Duration.seconds(10 ));
+     
+            transition.setToValue(1);
+            transition.setFromValue(0);
+            transition.setOnFinished(event1 -> {
 
 		     Node node = (Node) event.getSource();
 
@@ -129,28 +132,14 @@ public class SignupController implements Initializable, EventHandler<ActionEvent
          	login.setResizable(true);
          	login.show();
     
-
-		}
+            });
+            transition.play();
+		
+        }
+      
 		
 	}
-   /*
-    * cette methode verifie si le numero de téléphone est un nombre 
-    * si on arrive à caster la chaine en  entier alors on retourne true sinon false
-    * 
-    * */
-	private boolean  verifyNumber( JFXTextField text, String value) {
-    	
-    	try {
-			@SuppressWarnings("unused")
-			long number = Long.parseLong(value);
-		      return true;	
-		} catch (NumberFormatException e) {
-			 	AlertBox.display("ERROR INPUT VALUE", " Mobile "+ value + " IS Not NUMBER ");
-		return false;
-		}
-    	
-    }
-     
+
 
     
     private void  saveAdmin(String fname,String femail,String lname,String fpassword,String uname,long number) {
@@ -167,23 +156,13 @@ public class SignupController implements Initializable, EventHandler<ActionEvent
     	 ad.create(admin);
     }
     
-    public void validator( JFXTextField name) {
+    public  void validator( JFXTextField name) {
     	
     if (!name.equals(phone_number)) {
     	Utility.TextfieldValid(name);   	
 
     }else {
-    	NumberValidator validate = new NumberValidator();
-    	name.getValidators().add(validate);
-    	validate.setMessage("Only number are required");
-    	
-    	name.focusedProperty().addListener(new ChangeListener<Boolean>() {
-	        @Override
-	        public void changed(ObservableValue<? extends Boolean> observable , Boolean OldValue , Boolean newValue) {
-	        	if(!newValue)
-	        		name.validate();
-	        }
-    	});
+    	Utility.validNumber(name);
     }
     
 	}	

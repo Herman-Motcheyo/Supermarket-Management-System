@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import com.mysql.cj.protocol.Resultset;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -127,7 +126,7 @@ public class DashbordController implements Initializable{
     private TableColumn<Provider, String> col_storehouse;
 
     boolean rep ;
-    Resultset rs  = null; 
+    ResultSet rs  = null; 
     Service se = new Service();
     String codeP = code.getText();String designationP = designation.getText();
     String storehouseP = storehouse.getValue(); String categoryP = category.getValue();
@@ -217,7 +216,7 @@ public class DashbordController implements Initializable{
     }
     public void loadComboProvider() {
     	try {
-			rs =(Resultset) se.loadcombobos("provider");
+			rs =(ResultSet) se.loadcombobos("provider");
 			while(((ResultSet) rs).next()) {
 				provider.getItems().addAll(((ResultSet) rs).getString("namepro") );
 			}
@@ -228,7 +227,7 @@ public class DashbordController implements Initializable{
     }
     public void loadComboStorehouse() {
     	try {
-			rs =(Resultset) se.loadcombobos("storehouse");
+			rs =(ResultSet) se.loadcombobos("storehouse");
 			while(((ResultSet) rs).next()) {
 				storehouse.getItems().addAll(((ResultSet) rs).getString("nameStore") );
 			}
@@ -240,7 +239,7 @@ public class DashbordController implements Initializable{
     
     public void loadCombocategory() {
     	try {
-			rs =(Resultset) se.loadcombobos("category");
+			rs =(ResultSet) se.loadcombobos("category");
 			while(((ResultSet) rs).next()) {
 			  category.getItems().add(((ResultSet) rs).getString("nameCat"));
 			}

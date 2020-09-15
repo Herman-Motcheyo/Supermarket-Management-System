@@ -2,16 +2,16 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -21,15 +21,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1248.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1248.0" style="-fx-background-color: #CCCCCC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="supermarketmanagement.java.control.DashbordController">
    <children>
-      <HBox layoutX="-3.0" prefHeight="0.0" prefWidth="1010.0">
+      <HBox layoutX="-3.0" prefHeight="0.0" prefWidth="1010.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox prefHeight="41.0" prefWidth="1005.0" style="-fx-background-color: #097eba;" />
             <VBox prefHeight="41.0" prefWidth="1005.0" style="-fx-background-color: #097eba;" />
          </children>
       </HBox>
-      <HBox layoutX="-2.0" layoutY="-2.0" prefHeight="72.0" prefWidth="1256.0" style="-fx-background-color: #097eba;">
+      <HBox layoutX="-2.0" layoutY="-2.0" prefHeight="72.0" prefWidth="1256.0" style="-fx-background-color: #097eba;" AnchorPane.bottomAnchor="617.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="SUPERMARKET MANEGEMENT SYSTEM" textAlignment="JUSTIFY" textOrigin="CENTER" wrappingWidth="724.017578125">
                <font>
@@ -44,7 +44,7 @@
             </Text>
          </children>
       </HBox>
-      <HBox layoutX="-3.0" layoutY="70.0" prefHeight="50.0" prefWidth="1248.0" style="visibility: false;">
+      <HBox layoutX="-3.0" layoutY="70.0" prefHeight="50.0" prefWidth="1248.0" style="visibility: false;" AnchorPane.bottomAnchor="689.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="241.0" AnchorPane.topAnchor="0.0">
          <children>
             <JFXButton prefHeight="50.0" prefWidth="194.0" text="Management of stock" />
             <JFXButton prefHeight="50.0" prefWidth="176.0" text="Management of enter" />
@@ -56,25 +56,23 @@
             <JFXButton prefHeight="50.0" prefWidth="189.0" text="Reception of Product" />
          </children>
       </HBox>
-      <AnchorPane layoutX="2.0" layoutY="131.0" prefHeight="268.0" prefWidth="1248.0">
+      <AnchorPane layoutX="2.0" layoutY="131.0" prefHeight="268.0" prefWidth="1248.0" AnchorPane.bottomAnchor="286.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="131.0">
          <children>
             <Label alignment="CENTER" layoutX="8.0" layoutY="15.0" prefHeight="33.0" prefWidth="59.0" text="Code " />
             <Label alignment="CENTER" layoutX="14.0" layoutY="67.0" prefHeight="41.0" prefWidth="89.0" text="Designation" />
-            <TextField layoutX="111.0" layoutY="12.0" prefHeight="33.0" prefWidth="235.0" />
+            <TextField fx:id="code" layoutX="111.0" layoutY="12.0" prefHeight="33.0" prefWidth="235.0" AnchorPane.leftAnchor="111.0" AnchorPane.topAnchor="12.0" />
             <Label alignment="CENTER" layoutX="12.0" layoutY="122.0" prefHeight="33.0" prefWidth="51.0" text="Unity" />
-            <TextField layoutX="111.0" layoutY="125.0" prefHeight="26.0" prefWidth="103.0" />
-            <Label alignment="CENTER" layoutX="251.0" layoutY="131.0" prefHeight="33.0" prefWidth="51.0" text="Price" />
-            <TextField layoutX="403.0" layoutY="121.0" prefHeight="26.0" prefWidth="142.0" />
+            <Label alignment="CENTER" layoutX="260.0" layoutY="122.0" prefHeight="33.0" prefWidth="51.0" text="Price" />
+            <TextField fx:id="price" layoutX="403.0" layoutY="121.0" prefHeight="26.0" prefWidth="142.0" />
             <Label alignment="CENTER" layoutX="499.0" layoutY="15.0" prefHeight="33.0" prefWidth="115.0" text="Provider" />
-            <ComboBox layoutX="624.0" layoutY="19.0" prefHeight="26.0" prefWidth="193.0" />
-            <Label alignment="CENTER" layoutX="499.0" layoutY="71.0" prefHeight="33.0" prefWidth="115.0" text="Provider" />
-            <ComboBox layoutX="624.0" layoutY="67.0" prefHeight="26.0" prefWidth="193.0" />
+            <ComboBox fx:id="provider" layoutX="624.0" layoutY="19.0" prefHeight="26.0" prefWidth="193.0" promptText="select provider" />
+            <Label alignment="CENTER" layoutX="499.0" layoutY="71.0" prefHeight="33.0" prefWidth="115.0" text="Category" />
+            <ComboBox fx:id="category" layoutX="624.0" layoutY="67.0" prefHeight="26.0" prefWidth="193.0" promptText="select category" />
             <Label alignment="CENTER" layoutX="8.0" layoutY="172.0" prefHeight="33.0" prefWidth="89.0" text="Quantity" />
-            <TextField layoutX="111.0" layoutY="175.0" prefHeight="26.0" prefWidth="103.0" />
+            <TextField fx:id="quantity" layoutX="111.0" layoutY="176.0" prefHeight="26.0" prefWidth="142.0" />
             <Label alignment="CENTER" layoutX="251.0" layoutY="172.0" prefHeight="33.0" prefWidth="142.0" text="Minimum Quantity" />
-            <TextField layoutX="403.0" layoutY="175.0" prefHeight="26.0" prefWidth="142.0" />
+            <TextField fx:id="minqty" layoutX="403.0" layoutY="175.0" prefHeight="26.0" prefWidth="142.0" />
             <Label alignment="CENTER" layoutX="19.0" layoutY="226.0" prefHeight="33.0" prefWidth="89.0" text="Storehouse" />
-            <ComboBox layoutX="111.0" layoutY="230.0" prefHeight="26.0" prefWidth="193.0" />
             <VBox layoutX="952.0" prefHeight="272.0" prefWidth="294.0" style="-fx-border-color: #097eba;">
                <children>
                   <HBox prefHeight="46.0" prefWidth="294.0">
@@ -84,23 +82,23 @@
                   </HBox>
                   <AnchorPane prefHeight="227.0" prefWidth="292.0">
                      <children>
-                        <Label alignment="CENTER" layoutX="14.0" layoutY="25.0" prefHeight="33.0" prefWidth="59.0" text="Code " />
-                        <JFXTextField labelFloat="true" layoutX="67.0" layoutY="10.0" prefHeight="41.0" prefWidth="227.0" promptText="If you want to delete enter the code">
+                        <Label alignment="CENTER" layoutX="14.0" layoutY="25.0" prefHeight="33.0" prefWidth="59.0" text="Code " AnchorPane.bottomAnchor="168.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="221.0" AnchorPane.topAnchor="25.0" />
+                        <JFXTextField fx:id="codeforOperation" labelFloat="true" layoutX="67.0" layoutY="10.0" prefHeight="41.0" prefWidth="227.0" promptText="If you want to delete enter the code" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
                            <font>
                               <Font name="System Italic" size="13.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton buttonType="RAISED" layoutX="81.0" layoutY="58.0" prefHeight="41.0" prefWidth="160.0" style="-fx-background-color: #000000#000000;" text="ADD new product" textFill="#fffefe">
+                        <JFXButton fx:id="update" buttonType="RAISED" layoutX="111.0" layoutY="113.0" onAction="#updateProduct" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: #000000#000000; -fx-background-radius: 15;" text="Update" textFill="#fffefe" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="113.0">
                            <font>
                               <Font name="System Bold Italic" size="13.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton buttonType="RAISED" layoutX="81.0" layoutY="113.0" prefHeight="41.0" prefWidth="160.0" style="-fx-background-color: #000000#000000;" text="Search new product" textFill="#fffefe">
+                        <JFXButton fx:id="search" buttonType="RAISED" layoutX="110.0" layoutY="58.0" onAction="#searchProduct" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: #000000#000000; -fx-background-radius: 15;" text="Search " textFill="#fffefe" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="58.0">
                            <font>
                               <Font name="System Bold Italic" size="13.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton buttonType="RAISED" layoutX="81.0" layoutY="171.0" prefHeight="41.0" prefWidth="160.0" style="-fx-background-color: #000000#000000;" text="Delete Information" textFill="#fffefe">
+                        <JFXButton fx:id="dalete" buttonType="RAISED" layoutX="113.0" layoutY="162.0" onAction="#deleteProduct" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: #FF1E00; -fx-background-radius: 15;" text="Delete " textFill="#fffefe" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="113.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="162.0">
                            <font>
                               <Font name="System Bold Italic" size="13.0" />
                            </font>
@@ -109,80 +107,67 @@
                   </AnchorPane>
                </children>
             </VBox>
-            <JFXButton buttonType="RAISED" layoutX="633.0" layoutY="127.0" prefHeight="41.0" prefWidth="175.0" style="-fx-background-color: #000000#000000;" text="Save Information" textFill="#fffefe">
+            <JFXButton fx:id="save" buttonType="RAISED" layoutX="654.0" layoutY="131.0" onAction="#addProduct" prefHeight="33.0" prefWidth="153.0" style="-fx-background-color: #000000#000000; -fx-background-radius: 15;" text="Save Information" textFill="#fffefe">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </JFXButton>
-            <TextArea layoutX="111.0" layoutY="68.0" prefHeight="50.0" prefWidth="235.0" />
+            <TextArea fx:id="designation" layoutX="111.0" layoutY="68.0" prefHeight="50.0" prefWidth="235.0" />
             <Label layoutX="816.0" layoutY="120.0" prefHeight="33.0" prefWidth="45.0" />
-            <ImageView fitHeight="36.0" fitWidth="97.0" layoutX="821.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/image4.jpeg" />
-               </image>
-            </ImageView>
+            <TextField fx:id="unity" layoutX="111.0" layoutY="134.0" prefHeight="26.0" prefWidth="142.0" />
+            <JFXButton fx:id="refresh" buttonType="RAISED" layoutX="670.0" layoutY="245.0" onAction="#refreshProvider" prefHeight="24.0" prefWidth="101.0" style="-fx-background-color: #41803C;" text="Refresh" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_refresh_30px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <ComboBox fx:id="storehouse" layoutX="111.0" layoutY="219.0" prefHeight="26.0" prefWidth="193.0" promptText="select storehouse" />
          </children>
       </AnchorPane>
-      <JFXTreeTableView layoutX="2.0" layoutY="403.0" prefHeight="245.0" prefWidth="1248.0">
-         <columns>
-            <TreeTableColumn prefWidth="113.0" text="Code" />
-            <TreeTableColumn prefWidth="132.0" text="Designation" />
-            <TreeTableColumn prefWidth="141.0" text="category" />
-            <TreeTableColumn prefWidth="112.0" text="Unity" />
-            <TreeTableColumn prefWidth="145.0" text="Quantity" />
-            <TreeTableColumn prefWidth="147.0" text="Minimum Quantity" />
-            <TreeTableColumn prefWidth="143.0" text="Price" />
-            <TreeTableColumn prefWidth="166.0" text="Provider" />
-            <TreeTableColumn prefWidth="148.0" text="Storehouse" />
-         </columns>
-      </JFXTreeTableView>
-      <JFXButton layoutY="648.0" prefHeight="41.0" prefWidth="115.0" text="NEXT" />
-      <JFXButton layoutX="182.0" layoutY="648.0" prefHeight="41.0" prefWidth="115.0" text="PREV" />
-      <JFXButton layoutX="1130.0" layoutY="648.0" prefHeight="41.0" prefWidth="115.0" text="EXCEL" />
-      <JFXButton layoutX="1034.0" layoutY="648.0" prefHeight="41.0" prefWidth="89.0" text="WORD" />
-      <MenuBar layoutX="193.0" layoutY="70.0" opacity="0.94" prefHeight="36.0" prefWidth="857.0" style="-fx-background-color: #CCCCCC;">
+      <MenuBar layoutX="143.0" layoutY="70.0" opacity="0.94" prefHeight="36.0" prefWidth="1105.0" style="-fx-background-color: #CCCCCC;">
         <menus>
-            <Menu mnemonicParsing="false" text="File">
+            <Menu mnemonicParsing="false" style="-fx-margin: 25;" text="File">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem fx:id="roolback" mnemonicParsing="false" onAction="#roolbackMenu" text="roolback to main" />
+                  <MenuItem fx:id="men_exit" mnemonicParsing="false" onAction="#showExit" text="exit" />
               </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Stock">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Management of stock" />
-            </items>
-          </Menu>
           <Menu mnemonicParsing="false" text="Management of input">
             <items>
-              <MenuItem mnemonicParsing="false" text="Enter New Product in database" />
+              <MenuItem fx:id="men_input" mnemonicParsing="false" onAction="#showInput" text="Enter New Product in database" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Management of Output">
             <items>
-              <MenuItem mnemonicParsing="false" text="out product of stock" />
+              <MenuItem fx:id="men_output" mnemonicParsing="false" onAction="#showOutput" text="out product of stock" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Commande">
               <items>
-                <MenuItem mnemonicParsing="false" text="New" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Provider">
-              <items>
-                  <MenuItem mnemonicParsing="false" text="Modify provider" />
-                <MenuItem mnemonicParsing="false" text="New provider" />
-                  <MenuItem mnemonicParsing="false" text="delete provider" />
-                  <MenuItem mnemonicParsing="false" text="list of provider" />
+                <MenuItem fx:id="men_command" mnemonicParsing="false" onAction="#showCommand" text="New" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Reception">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem fx:id="men_reception" mnemonicParsing="false" onAction="#showRecepton" text="reception" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Storehouse">
+              <items>
+                <MenuItem fx:id="men_storehouse" mnemonicParsing="false" onAction="#showStorehouse" text="add and modify" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Provider">
+              <items>
+                  <MenuItem fx:id="men_provider" mnemonicParsing="false" onAction="#showProvider" text="provider operations" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Category">
               <items>
-                <MenuItem mnemonicParsing="false" text="New" />
+                <MenuItem fx:id="men_cat" mnemonicParsing="false" onAction="#showcategory" text="New" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="help">
@@ -193,10 +178,18 @@
             </Menu>
         </menus>
       </MenuBar>
-      <JFXButton layoutX="8.0" layoutY="75.0" prefHeight="26.0" prefWidth="134.0" style="-fx-background-color: #000000#000000;" text="Rollback to main" textFill="#fffefe">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </JFXButton>
+      <TableView fx:id="table" layoutX="15.0" layoutY="403.0" prefHeight="254.0" prefWidth="1248.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="403.0">
+        <columns>
+          <TableColumn fx:id="col_code" prefWidth="117.0" text="Code" />
+          <TableColumn fx:id="col_designation" prefWidth="112.0" text="Designation" />
+            <TableColumn fx:id="col_category" prefWidth="153.0" text="category" />
+            <TableColumn fx:id="col_unity" prefWidth="110.0" text="Unity" />
+            <TableColumn fx:id="col_quantity" prefWidth="126.0" text="Quantity" />
+            <TableColumn fx:id="col_minqty" prefWidth="175.0" text="Minimum Quantity" />
+            <TableColumn fx:id="col_price" prefWidth="134.0" text="Price" />
+            <TableColumn fx:id="col_provider" prefWidth="162.0" text="Provider" />
+            <TableColumn fx:id="col_storehouse" prefWidth="156.0" text="Storehouse" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

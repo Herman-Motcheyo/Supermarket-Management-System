@@ -19,7 +19,7 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="1217.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="supermarketmanagement.java.control.HomebController">
    <children>
-      <BorderPane layoutX="84.0" layoutY="49.0" prefHeight="651.0" prefWidth="1217.0" AnchorPane.bottomAnchor="-29.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="borderPane" layoutX="84.0" layoutY="49.0" prefHeight="651.0" prefWidth="1217.0" AnchorPane.bottomAnchor="-29.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
             <AnchorPane prefHeight="564.0" prefWidth="206.0" styleClass="sidebar" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
                <children>
@@ -84,7 +84,7 @@
             </AnchorPane>
          </left>
          <center>
-            <AnchorPane prefHeight="627.0" prefWidth="703.0" styleClass="sidebar-center" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="rigthAnchorPane" prefHeight="627.0" prefWidth="703.0" styleClass="sidebar-center" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
                <children>
                   <Pane prefHeight="58.0" prefWidth="588.0" style="-fx-background-color: #097eba; -fx-background-radius: 5;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -213,11 +213,11 @@
                         </Label>
                         <TextArea fx:id="designation" layoutX="199.0" layoutY="170.0" prefHeight="41.0" prefWidth="216.0" promptText="designation" />
                         <Button fx:id="save" layoutX="415.0" layoutY="215.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="26.0" prefWidth="76.0" styleClass="button-side" text="Save" textFill="WHITE" />
-                        <Button fx:id="delete" layoutX="879.0" layoutY="193.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="76.0" styleClass="button-side" text="delete" textFill="#eb1818" />
-                        <Button fx:id="update" layoutX="879.0" layoutY="124.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="76.0" styleClass="button-side" text="Update" textFill="WHITE" />
+                        <Button fx:id="delete" layoutX="879.0" layoutY="193.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="26.0" prefWidth="76.0" styleClass="button-side" text="delete" textFill="#eb1818" />
+                        <Button fx:id="update" layoutX="879.0" layoutY="124.0" mnemonicParsing="false" onAction="#updateProduct" prefHeight="0.0" prefWidth="76.0" styleClass="button-side" text="Update" textFill="WHITE" />
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                        <Button fx:id="search" layoutX="879.0" layoutY="62.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="76.0" styleClass="button-side" text="search" textFill="WHITE" />
-                        <JFXButton fx:id="refresh" buttonType="RAISED" layoutX="523.0" layoutY="215.0" onAction="#refreshProvider" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #41803C;" text="Refresh" textFill="WHITE">
+                        <Button fx:id="search" layoutX="879.0" layoutY="62.0" mnemonicParsing="false" onAction="#searchAndsetProductToTextField" prefHeight="26.0" prefWidth="76.0" styleClass="button-side" text="search" textFill="WHITE" />
+                        <JFXButton fx:id="refresh" buttonType="RAISED" layoutX="523.0" layoutY="215.0" onAction="#refreshProduct" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #41803C;" text="Refresh" textFill="WHITE">
                            <graphic>
                               <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

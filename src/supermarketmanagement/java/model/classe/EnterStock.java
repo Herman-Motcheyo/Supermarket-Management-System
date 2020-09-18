@@ -1,6 +1,6 @@
 package supermarketmanagement.java.model.classe;
 
-import supermarketmanagement.java.utility.Date;
+import java.time.LocalDate;
 /*
  * this class is using to manage enter product in storehouse
  * */
@@ -9,7 +9,7 @@ public class EnterStock {
 	private int   idEnter  ;
     private int quantityEnter ;
     private float priceEnter ;
-    private Date dateEnter  ;
+    private LocalDate dateEnter  ;
     private String codeP ; /*come from product it means 'code product'*/
     
 	public int getIdEnter() {
@@ -36,11 +36,11 @@ public class EnterStock {
 		this.priceEnter = priceEnter;
 	}
 	
-	public Date getDateEnter() {
+	public LocalDate getDateEnter() {
 		return dateEnter;
 	}
 	
-	public void setDateEnter(Date dateEnter) {
+	public void setDateEnter(LocalDate dateEnter) {
 		this.dateEnter = dateEnter;
 	}
 	

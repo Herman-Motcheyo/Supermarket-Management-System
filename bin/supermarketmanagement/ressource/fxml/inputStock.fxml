@@ -1,64 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="643.0" style="-fx-background-color: #05071E; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="643.0" style="-fx-background-color: #CCCCCC; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="supermarketmanagement.java.control.EnterStockController">
    <children>
-      <Label alignment="CENTER" layoutX="23.0" layoutY="74.0" prefHeight="33.0" prefWidth="126.0" text="Code to enter" textAlignment="JUSTIFY" textFill="#8c8888" />
-      <Label alignment="CENTER" layoutX="348.0" layoutY="74.0" prefHeight="33.0" prefWidth="67.0" text="Qauntity" textAlignment="JUSTIFY" textFill="#8c8888" />
-      <Label alignment="CENTER" layoutX="348.0" layoutY="119.0" prefHeight="33.0" prefWidth="40.0" text="Date" textAlignment="JUSTIFY" textFill="#8c8888" />
-      <Label alignment="CENTER" layoutX="33.0" layoutY="119.0" prefHeight="33.0" prefWidth="50.0" text="Price" textAlignment="JUSTIFY" textFill="#8c8888" />
-      <DatePicker layoutX="441.0" layoutY="123.0" />
-      <JFXTreeTableView layoutY="154.0" prefHeight="197.0" prefWidth="643.0">
-         <columns>
-            <TreeTableColumn prefWidth="105.0" text="IdEnter" />
-            <TreeTableColumn prefWidth="125.0" text="Code" />
-            <TreeTableColumn prefWidth="127.0" text="Quantity" />
-            <TreeTableColumn prefWidth="149.0" text="Price" />
-            <TreeTableColumn prefWidth="134.0" text="Date" />
-         </columns>
-      </JFXTreeTableView>
-      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Save" textFill="WHITE" />
-      <JFXButton buttonType="RAISED" layoutX="133.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Next" textFill="WHITE" />
-      <JFXButton buttonType="RAISED" layoutX="254.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Preview" textFill="WHITE" />
-      <JFXButton buttonType="RAISED" layoutX="528.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Excel" textFill="WHITE" />
-      <JFXButton buttonType="RAISED" layoutX="391.0" layoutY="360.0" prefHeight="26.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Word" textFill="WHITE" />
-      <Pane prefHeight="65.0" prefWidth="643.0" style="-fx-background-color: #097eba; -fx-background-radius: 5;">
+      <Label alignment="CENTER" layoutX="348.0" layoutY="74.0" prefHeight="33.0" prefWidth="67.0" text="Qauntity" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="348.0" layoutY="119.0" prefHeight="33.0" prefWidth="40.0" text="Date" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="33.0" layoutY="119.0" prefHeight="33.0" prefWidth="50.0" text="Price" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <DatePicker fx:id="dateEnter" layoutX="441.0" layoutY="123.0" />
+      <JFXButton buttonType="RAISED" layoutX="270.0" layoutY="361.0" onAction="#saveEnterStock" prefHeight="33.0" prefWidth="101.0" style="-fx-background-color: #097eba; -fx-background-radius: 20;" text="Save" textFill="WHITE" />
+      <Pane prefHeight="66.0" prefWidth="643.0" style="-fx-background-color: #097eba; -fx-background-radius: 5;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="25.0" layoutY="17.0" prefHeight="21.0" prefWidth="600.0" text="Cette fenetre Permet de voir les Entrées des differentes " textFill="WHITE">
+            <Label layoutX="25.0" layoutY="17.0" prefHeight="21.0" prefWidth="600.0" text="Cette fenetre Permet d'entrer les produits existant dans " textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="240.0" layoutY="43.0" prefHeight="21.0" prefWidth="139.0" text="transactions" textFill="WHITE">
+            <Label layoutX="240.0" layoutY="43.0" prefHeight="21.0" prefWidth="198.0" text="la base de données" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <TextField layoutX="148.0" layoutY="77.0" prefHeight="26.0" prefWidth="172.0" promptText="code" style="-fx-font: red;">
+      <TextField fx:id="price" layoutX="148.0" layoutY="123.0" prefHeight="26.0" prefWidth="172.0" promptText="price">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </TextField>
-      <TextField layoutX="148.0" layoutY="123.0" prefHeight="26.0" prefWidth="172.0" promptText="price" style="-fx-font: red;">
+      <TextField fx:id="quantity" layoutX="442.0" layoutY="77.0" prefHeight="26.0" prefWidth="198.0" promptText="quantity">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </TextField>
-      <TextField layoutX="442.0" layoutY="77.0" prefHeight="26.0" prefWidth="198.0" promptText="quantity" style="-fx-font: red;">
+      <Button fx:id="word" layoutX="492.0" layoutY="353.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="32.0" styleClass="button-side" textFill="#868491">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="25.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/photo_2020-09-14_23-15-15.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="excel" layoutX="570.0" layoutY="353.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="26.0" styleClass="button-side" textFill="#868491">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="20.0" layoutX="25.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/photo_2020-09-14_23-11-58.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TableView fx:id="table" layoutX="-2.0" layoutY="174.0" prefHeight="181.0" prefWidth="643.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="174.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="col_quantity" prefWidth="116.0" text="Quantity" />
+            <TableColumn fx:id="col_price" prefWidth="149.0" text="Price" />
+            <TableColumn fx:id="col_date" prefWidth="164.0" text="Date" />
+            <TableColumn fx:id="col_codeProduct" prefWidth="138.0" text="Code Product" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="33.0" layoutY="74.0" prefHeight="33.0" prefWidth="101.0" text="Code to enter" textAlignment="JUSTIFY">
          <font>
-            <Font name="System Bold Italic" size="13.0" />
-         </font>
-      </TextField>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <ComboBox fx:id="codeArt" layoutX="148.0" layoutY="78.0" prefHeight="26.0" prefWidth="172.0" promptText="Code Product" />
    </children>
 </AnchorPane>

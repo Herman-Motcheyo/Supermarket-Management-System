@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 
+import javafx.animation.FadeTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 import supermarketmanagement.java.model.DAO.ConnectDatabase;
 import supermarketmanagement.java.model.DAO.DAO;
 import supermarketmanagement.java.model.DAO.ProviderDAO;
@@ -22,7 +25,10 @@ import supermarketmanagement.java.model.classe.Provider;
 import supermarketmanagement.java.utility.Utility;
 
 public class ProviderController implements Initializable{
-
+    
+    @FXML
+     private AnchorPane rootPane;
+    
 	  @FXML
 	    private JFXButton newP;
 
@@ -147,7 +153,8 @@ public class ProviderController implements Initializable{
             System.out.println("c,est sas");
         }
     }
-
+/*
+ * this method is use to create provider when ActionEvent is call */
     @FXML
     void newProvider(ActionEvent event) {
     	boolean rep ;
@@ -170,7 +177,8 @@ public class ProviderController implements Initializable{
     void returnDashbord(ActionEvent event) {
 
     }
-
+/*
+ * this method is use to call refresh method of table view*/
     @FXML
     void refreshProvider(ActionEvent event) {
     	col_tablle.getItems().clear();;
@@ -192,7 +200,10 @@ public class ProviderController implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+        rootPane.setOpacity(0);
+        makeFAdeInTransition();
 		loadDataToTable();
+		
 		 Utility.TextfieldValid(nameP); Utility.TextfieldValid(emailP); Utility.TextfieldValid(codeP);
 		 Utility.TextfieldValid(adresseP); Utility.validNumber(mobileP);
 		 Utility.TextfieldValid(nameOperation);
@@ -248,6 +259,17 @@ public class ProviderController implements Initializable{
 		col_mobile.setCellValueFactory(new PropertyValueFactory<>("numberPro"));
 		
 		col_tablle.setItems(ob);
+	}
+	private void makeFAdeInTransition() {
+		 FadeTransition fadetansition = new FadeTransition();
+		 fadetansition.setDuration(Duration.millis(1000));
+		 fadetansition.setNode(rootPane);
+		 fadetansition.setFromValue(0);
+		 fadetansition.setToValue(1);
+		 fadetansition.play();
+			
+		
+		
 	}
 
 }

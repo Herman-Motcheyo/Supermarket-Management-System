@@ -12,6 +12,8 @@ import supermarketmanagement.java.control.AlertBox;
 
 public class Utility{
 
+	static Alert problem =new Alert(AlertType.ERROR);
+
 	public static void TextfieldValid(JFXPasswordField name) {
     	RequiredFieldValidator validate = new RequiredFieldValidator();
     	name.getValidators().add(validate);
@@ -69,11 +71,17 @@ public class Utility{
         sucess.setContentText("SUcess Operation") ;
         sucess.showAndWait();
     }
-    public static void printError() {
-		Alert problem =new Alert(AlertType.ERROR);
+    public static void printErrorDataBase() {
 		problem.setTitle("Error");
+		problem.setHeaderText("This information is also use( code )");
+        problem.setContentText("Ce code  est deja utilisé");
+        problem.setResizable(true);
+        problem.showAndWait();
+    }
+    public static void printError() {
 		problem.setHeaderText("These informations are also use( email and username)");
         problem.setContentText("Ces informations ne sont pas à etre utiliser");
+        problem.setResizable(true);
         problem.showAndWait();
     }
     /*
@@ -119,7 +127,7 @@ public class Utility{
   			 numb = Long.parseLong(value);
   		      return true;	
   		} catch (NumberFormatException e) {
-  			 	AlertBox.display("ERROR INPUT VALUE", " Mobile "+ value + " IS Not NUMBER ");
+  			 	AlertBox.display("ERROR ", "This ' "+ value + " 'IS Not NUMBER ");
   		return false;
   		}
       	

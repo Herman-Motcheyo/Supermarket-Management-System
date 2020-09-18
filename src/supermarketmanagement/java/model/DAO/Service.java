@@ -26,6 +26,12 @@ public class Service {
 				st = connect.createStatement();
 				rs= st.executeQuery(sql);
 				return rs;
+		}
+		else if (name.equalsIgnoreCase("product")) {
+		     sql = " select codeP from product";
+				st = connect.createStatement();
+				rs= st.executeQuery(sql);
+				return rs;
 		}else {
 		    sql = " select codePro from provider";
 				st = connect.createStatement();

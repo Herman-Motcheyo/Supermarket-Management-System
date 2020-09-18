@@ -22,28 +22,24 @@ public class ProviderDAO extends DAO <Provider,String>{
 	@Override
 	public boolean create(Provider p) {
 	     try {
-	    	 
+	    	String query1 ="select codePro from provider where codePro = ?"; 
 			String query = "INSERT INTO provider (codePro,namePro,numberPro,adressePro,mailPro) VALUES (?,?,?,?,?)";
-			connect.setAutoCommit(false);
-			pst = connect.prepareStatement(query);
-			pst.setString(1,p.getCodePro() );
-			pst.setString(2,p.getNamePro() );
-			pst.setString(3,p.getNumberPro());
-			pst.setString(4,p.getAdressePro() );
-			pst.setString(5,p.getMailPro());
 			
-	 //       if(!findString(p.getCodePro())){
-	  //      	Utility.printError(); 
-	  //      }
-	   //    else {
-	        ///	System.out.println(" test enter");
+			pst = connect.prepareStatement(query1);
+			pst.setString(1, p.getCodePro());
+			result = pst.executeQuery();
+			if(result.next()) {
+				Utility.printErrorDataBase();
+			}else {
+				pst = connect.prepareStatement(query);
+				pst.setString(1,p.getCodePro() );
+				pst.setString(2,p.getNamePro() );
+				pst.setString(3,p.getNumberPro());
+				pst.setString(4,p.getAdressePro() );
+				pst.setString(5,p.getMailPro());
 				pst.execute();
-				connect.commit();;
-				
-			//s	System.out.println(" test execuute");
 				Utility.printSucess();
-	    //   }
-	        	
+			}	        	
 	   
 
 		} catch (SQLException e) {
@@ -83,12 +79,15 @@ public class ProviderDAO extends DAO <Provider,String>{
 		pst.executeUpdate();
 		Utility.printSucess();
 	} catch (SQLException e) {
-		AlertBox.display("Error", "Problem accout during Upadate");
+		AlertBox.display("Error", "Problem account during Upadate");
 		e.printStackTrace();
 	}
 		return true;
 	}
-
+/*
+ * cette methode recupere le code du fournisseur  le recherche dans la base , puis envoit les informations  
+ * à l'object qui retourne
+ * */
 	@Override
 	public Provider find(String code) {
 		Provider pr = null;
@@ -100,16 +99,7 @@ public class ProviderDAO extends DAO <Provider,String>{
 		result = pst.executeQuery();
 		  System.out.println("dans find apres resultset");
 		if( result.next()) {
-		/**	ResultSetMetaData rsm = result.getMetaData();
-			  System.out.println(" trouvé");
-			  for(int i = 1; i <= rsm.getColumnCount(); i++)
-				  System.out.print("\t" + rsm.getColumnName(i).toUpperCase() + "\t *");
-			  System.out.println("\n");
-			  for(int i = 1; i <= rsm.getColumnCount(); i++)
-				  System.out.print("\t" + result.getObject(i).toString() + "\t |");*/
 			//  while(result.next()) {
-
-				  System.out.println("dans find code trouvé");
 
 	        	  pr = new Provider();
 	        	  pr.setCodePro(result.getString("codePro"));
@@ -141,11 +131,11 @@ public class ProviderDAO extends DAO <Provider,String>{
          result = pst.executeQuery();
        
       		 if(result.next() ) {
-      			 System.out.println(",est pas vide");
+ //     			 System.out.println(",est pas vide");
       	          return false;
       		 }
        else {
-    	   System.out.println("videazd");
+ //   	   System.out.println("videazd");
       	 return true;
        }
 	}

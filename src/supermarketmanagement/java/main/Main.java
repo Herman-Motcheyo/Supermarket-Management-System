@@ -16,9 +16,8 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage login) throws Exception {
-	 // FXMLLoader loader =new FXMLLoader(getClass().getResource("/supermarketmanagement/ressource/fxml/login.fxml"));
-	 AnchorPane root=  FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/inputStock.fxml")) ;
-	 // StackPane root = FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/signup.fxml"));
+	 AnchorPane root=  FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/Home.fxml")) ;
+	//  StackPane root = FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/loginb.fxml"));
 		Scene scene =new Scene(root); 
 	 login.setScene(scene);
 	 login.setResizable(true);

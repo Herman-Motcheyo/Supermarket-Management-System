@@ -29,7 +29,7 @@
             <Font name="System Bold" size="13.0" />
          </font></Label>
       <DatePicker fx:id="dateEnter" layoutX="441.0" layoutY="123.0" />
-      <JFXButton buttonType="RAISED" layoutX="270.0" layoutY="361.0" onAction="#saveEnterStock" prefHeight="33.0" prefWidth="101.0" style="-fx-background-color: #097eba; -fx-background-radius: 20;" text="Save" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="281.0" layoutY="361.0" onAction="#saveEnterStock" prefHeight="33.0" prefWidth="101.0" style="-fx-background-color: #097eba; -fx-background-radius: 20;" text="Save" textFill="WHITE" />
       <Pane prefHeight="66.0" prefWidth="643.0" style="-fx-background-color: #097eba; -fx-background-radius: 5;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label layoutX="25.0" layoutY="17.0" prefHeight="21.0" prefWidth="600.0" text="Cette fenetre Permet d'entrer les produits existant dans " textFill="WHITE">
@@ -86,5 +86,19 @@
             <Font name="System Bold" size="13.0" />
          </font></Label>
       <ComboBox fx:id="codeArt" layoutX="148.0" layoutY="78.0" prefHeight="26.0" prefWidth="172.0" promptText="Code Product" />
+      <JFXButton buttonType="RAISED" layoutX="168.0" layoutY="364.0" onAction="#refreshProduct" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #41803C;" text="Refresh" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_refresh_30px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="391.0" layoutY="357.0" prefHeight="33.0" prefWidth="101.0" text="Export To" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

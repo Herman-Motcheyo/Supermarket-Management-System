@@ -3,8 +3,6 @@ package supermarketmanagement.java.model.DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.ZoneId;
-import java.util.Date;
 
 import supermarketmanagement.java.control.AlertBox;
 import supermarketmanagement.java.model.classe.EnterStock;
@@ -21,16 +19,16 @@ public class EnterStockDAO extends DAO<EnterStock,Integer> {
 	@Override
 	public boolean create(EnterStock enter) {
 		//default time zone
-		ZoneId defaultZoneId = ZoneId.systemDefault();
+		//ZoneId defaultZoneId = ZoneId.systemDefault();
 		//date = localDate + atStartOfDay() + default time zone + toInstant()
-		Date date = Date.from(enter.getDateEnter().atStartOfDay(defaultZoneId).toInstant());
+	//	Date date = Date.from(enter.getDateEnter().atStartOfDay(defaultZoneId).toInstant());
 	    try {
 			query = "INSERT INTO  EnterStock (quantityEnter,priceEnter,dateEnter,codeP) VALUES (?,?,?,?)";
 
 				pst = connect.prepareStatement(query);
 				pst.setInt(1,enter.getQuantityEnter() );
 				pst.setFloat(2,enter.getPriceEnter() );
-			//	pst.setDate(3,date.toInstant().atZone(ZoneId.of("Africa/Tunis")).toLocalDate());
+				pst.setDate(3, java.sql.Date.valueOf(enter.getDateEnter()));
 				pst.setString(4,enter.getCodeP() );;
 				pst.execute();
 				Utility.printSucess();

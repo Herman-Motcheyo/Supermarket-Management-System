@@ -24,12 +24,12 @@
             <Insets bottom="30.0" left="100.0" top="30.0" />
          </HBox.margin>
       </HBox>
-      <Button fx:id="stock" alignment="CENTER" layoutX="82.0" layoutY="150.0" mnemonicParsing="false" onAction="#goToStock" prefHeight="44.0" prefWidth="211.0" style="-fx-background-color: #097eba;" text="Go to Stock Management" textFill="#f5efef">
+      <Button fx:id="stock" alignment="CENTER" layoutX="82.0" layoutY="150.0" mnemonicParsing="false" onAction="#goToStock" prefHeight="44.0" prefWidth="211.0" style="-fx-background-color: #097eba; -fx-background-radius: 15px;" text="Go to Stock Management" textFill="#f5efef">
          <font>
             <Font name="Nakula" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="sold" alignment="CENTER" layoutX="82.0" layoutY="236.0" mnemonicParsing="false" onAction="#goToSold" prefHeight="44.0" prefWidth="211.0" style="-fx-background-color: #097eba;" text="Go to Sold Management" textFill="#f5efef">
+      <Button fx:id="sold" alignment="CENTER" layoutX="82.0" layoutY="236.0" mnemonicParsing="false" onAction="#goToSold" prefHeight="44.0" prefWidth="211.0" style="-fx-background-color: #097eba; -fx-background-radius: 15px;" text="Go to Sold Management" textFill="#f5efef">
          <font>
             <Font name="Nakula" size="16.0" />
          </font>

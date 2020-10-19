@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,12 +17,13 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import supermarketmanagement.java.model.DAO.ConnectDatabase;
 import supermarketmanagement.java.model.DAO.DAO;
 import supermarketmanagement.java.model.DAO.EnterStockDAO;
 import supermarketmanagement.java.model.DAO.Service;
 import supermarketmanagement.java.model.classe.EnterStock;
-import supermarketmanagement.java.model.classe.OutputStock;
+
 import supermarketmanagement.java.utility.Utility;
 
 public class EnterStockController implements Initializable {
@@ -64,6 +67,8 @@ public class EnterStockController implements Initializable {
     EnterStock enterStock;
     
     DAO<EnterStock, Integer> enter = new EnterStockDAO(ConnectDatabase.getInstance());  
+    ObservableList< EnterStock> ob = FXCollections.observableArrayList();
+    
     @FXML
     void saveEnterStock(ActionEvent event) {
       float priceE = 0;
@@ -83,9 +88,9 @@ public class EnterStockController implements Initializable {
 		          enterStock.setDateEnter(ld);
 		          enterStock.setPriceEnter(priceE);
 		          enterStock.setQuantityEnter(qte);
-		          System.out.println(ld);
+		//        System.out.println(ld);
                  enter.create(enterStock);
-				
+			
 			} catch (NumberFormatException e) {
 				  AlertBox.display("Error", "We required number to price  and quantity  ");			}
     	  }
@@ -110,6 +115,32 @@ public class EnterStockController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		loadComboProduct() ;
-		
+		loadTable() ;
 	}
+	
+	private void loadTable() {
+		try {
+
+			ResultSet rt = ConnectDatabase.getInstance().createStatement().executeQuery("SELECT * FROM EnterStock");
+			while(rt.next()) {
+				ob.add(new EnterStock(rt.getInt("idEnter"), rt.getInt("quantityEnter"),rt.getFloat("priceEnter"), rt.getDate("dateEnter").toLocalDate(),rt.getString("codeP") ));
+			}
+		} catch (SQLException e) {
+		AlertBox.display("Error", "Do not load table view");
+			e.printStackTrace();
+		} 
+		
+		col_id.setCellValueFactory(new PropertyValueFactory<>("idEnter"));
+		col_codeProduct.setCellValueFactory(new PropertyValueFactory<>("codeP"));
+		col_date.setCellValueFactory(new PropertyValueFactory<>("dateEnter"));
+		col_quantity.setCellValueFactory(new PropertyValueFactory<>("quantityEnter"));
+		col_price.setCellValueFactory(new PropertyValueFactory<>("priceEnter"));
+		table.setItems(ob);
+	}
+
+    @FXML
+    void refreshProduct(ActionEvent event) {
+         table.getItems().clear();
+         loadTable();
+    }
 }

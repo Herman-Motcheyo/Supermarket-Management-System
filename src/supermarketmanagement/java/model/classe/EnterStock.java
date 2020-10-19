@@ -6,6 +6,16 @@ import java.time.LocalDate;
  * */
 public class EnterStock {
     
+	public EnterStock(int idEnter, int quantityEnter, float priceEnter, LocalDate dateEnter, String codeP) {
+		this.idEnter = idEnter;
+		this.quantityEnter = quantityEnter;
+		this.priceEnter = priceEnter;
+		this.dateEnter = dateEnter;
+		this.codeP = codeP;
+	}
+	public EnterStock() {
+	}
+
 	private int   idEnter  ;
     private int quantityEnter ;
     private float priceEnter ;

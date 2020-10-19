@@ -116,7 +116,7 @@ public class SignupController implements Initializable, EventHandler<ActionEvent
  
  	        StackPane root = null;
 		          try {
-			           root = FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/login.fxml"));
+			           root = FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/loginb.fxml"));
 		              } catch (IOException e) {
 		        	e.printStackTrace();
 	   	          }

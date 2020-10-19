@@ -16,6 +16,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -50,7 +51,9 @@ public class HomebController implements Initializable, EventHandler<ActionEvent>
 
 	    @FXML
 	    private Button men_commande;
-
+	    
+	    @FXML
+	    private Button roolback;
 	    @FXML
 	    private Button men_enter;
 
@@ -152,7 +155,10 @@ public class HomebController implements Initializable, EventHandler<ActionEvent>
 	    private Button excel;
 	    
 	    boolean rep ;
-	    ResultSet rs  = null; 
+	    ResultSet rs  = null;
+	    Stage stage = null;
+	    Node node = null;
+	    Scene scene;
 	    Product P;
 	    Service se = new Service();
 	    
@@ -231,7 +237,7 @@ public class HomebController implements Initializable, EventHandler<ActionEvent>
 		 loadComboStorehouse();		
 		 loadDataToTable();
 		 men_provider.setOnAction(this);men_category.setOnAction(this);men_enter.setOnAction(this);men_output.setOnAction(this);
-		 men_storehouse.setOnAction(this);men_commande.setOnAction(this);
+		 men_storehouse.setOnAction(this);men_commande.setOnAction(this);roolback.setOnAction(this);
 	}
 	
 	
@@ -312,7 +318,22 @@ public class HomebController implements Initializable, EventHandler<ActionEvent>
 			viewEntityrInfo("storeHouse.fxml");
 		} catch (IOException e1) {
 			e1.printStackTrace();
-		} 
+		}
+
+	}else if (e.getSource().equals(roolback)) {
+		stage = (Stage)node.getScene().getWindow();
+		stage.close();
+		try {
+			new FXMLLoader();
+			anchorPane = FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/Home.fxml"));
+			scene = new Scene(anchorPane);
+			stage.setScene(scene);
+			stage.setTitle("Home");
+			stage.show();
+		} catch (Exception e2) {
+		AlertBox.display("Error", "Do not load fxml file");
+		   e2.printStackTrace();
+		}
 	}
 	
 
@@ -323,7 +344,7 @@ public class HomebController implements Initializable, EventHandler<ActionEvent>
 			Stage currentStage = new Stage();
 			AnchorPane secondView = FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/" + screemName));
 
-			Scene scene = new Scene(secondView);
+			scene = new Scene(secondView);
 		//	currentStage.setTitle(screemName);
 			currentStage.setScene(scene);
 			currentStage.showAndWait();	
@@ -344,7 +365,7 @@ public class HomebController implements Initializable, EventHandler<ActionEvent>
 		        try {
 					viewEntityrInfo( screemName);
 				} catch (IOException e) {
-					AlertBox.display("Error", "Filed to fxml file" + screemName);					e.printStackTrace();
+					AlertBox.display("Error", "Filed to load fxml file" + screemName);					e.printStackTrace();
 				}
 		        });
 		        fadeTransition.play();

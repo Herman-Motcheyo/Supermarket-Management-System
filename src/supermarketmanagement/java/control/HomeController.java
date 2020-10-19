@@ -18,7 +18,7 @@ public class HomeController {
 
     @FXML
     private Button sold;
-
+    AnchorPane root;
     private Stage stockMana =null;
     private Node node = null;
     
@@ -31,7 +31,7 @@ public class HomeController {
     @FXML
     void goToStock(ActionEvent event) {
         node = (Node) event.getSource();
-        loadFxml("dashbord.fxml");
+        loadFxml("Homeb.fxml");
     }
     
     private void loadFxml( String file) {
@@ -39,7 +39,7 @@ public class HomeController {
         stockMana = (Stage)node.getScene().getWindow();
         stockMana.close();
     	try {	  
-			AnchorPane root = FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/"+file));
+			root = FXMLLoader.load(getClass().getResource("/supermarketmanagement/ressource/fxml/"+file));
 			Scene scene = new Scene(root);
 			stockMana.setScene(scene);
 			stockMana.setTitle("Dashbord");
